@@ -1,0 +1,17 @@
+
+
+h1{
+    color: rgb(226, 30, 17);
+    font-size: 40px;
+    text-transform: capitalize;
+    font-style: italic;
+    font-weight: 900;
+    word-spacing: normal;
+}
+.img src{
+    width: 150px;
+    height: 150px;
+    border: 2px solid red;
+    border-radius: 50%;
+
+}
