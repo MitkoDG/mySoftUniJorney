@@ -40,13 +40,15 @@ function degustationParty(input) {
     .forEach((el) => console.log(`${el}: ${liked[el].join(", ")} `));
   console.log(`Unliked meals: ${dislike}`);
 }
-// degustationParty(["Like-Krisi-shrimps","Like-Krisi-soup","Like-Penelope-dessert","Like-Misho-salad","Stop"]);
+degustationParty(["Like-Krisi-shrimps","Like-Krisi-soup","Like-Penelope-dessert","Like-Misho-salad","Stop"]);
 
-// console.log('----next----');
+console.log('\n----next----\n');
 
-// degustationParty(["Like-Krisi-shrimps",
-// "Dislike-Vili-carp",
-// "Dislike-Krisi-salad",
-// "Stop"])
+degustationParty(["Like-Krisi-shrimps",
+"Dislike-Vili-carp",
+"Dislike-Krisi-salad",
+"Stop"])
+
+console.log('\n----next----\n');
 
 degustationParty(["Like-Katy-fish", "Dislike-Katy-fish", "Stop"]);
