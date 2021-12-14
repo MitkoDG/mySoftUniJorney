@@ -5,7 +5,10 @@ function objToJSON(name, lastName, hairColor) {
         hairColor
     }
 
+    console.log(obj);
     let output = JSON.stringify(obj)
     console.log(output);
+    let parsed = JSON.parse(output)
+    console.log(parsed);
 }
 objToJSON('George', 'Jones', 'Brown')
