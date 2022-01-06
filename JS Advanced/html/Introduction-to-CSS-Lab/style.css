@@ -1,0 +1,57 @@
+article p {
+    background: red;
+    font-style: normal;
+    color: wheat;
+}
+
+.text-center {
+    text-align: center;
+}
+span {
+    background: DodgerBlue;
+    color: #ffffff;
+  }
+  span#top {
+    background: DodgerBlue;
+  }
+  
+  span.sky {
+    background: rgb(61, 77, 94);
+  }
+  .code {
+    font-family:
+      Consolas;
+  }
+  div.items a { 
+    color: green;
+    font-weight: bold;
+  }
+  .apple { 
+    color: red;
+ }
+ .orange { 
+    color: orange;
+ }
+ .small { 
+    font-size: 16px;
+ }
+ .apple.orange {
+   font-style: italic;
+ }
+ input[type="submit"] {
+     color: white;
+     background: darkgray;
+     text-transform: uppercase;
+     font-weight: bold;
+     letter-spacing: 2px;
+     margin: 5px;
+     padding: 5px 11px;
+     border: 1px solid #c7c7c7;
+     border-radius: 7px;
+     cursor: pointer;
+ }
+ input[type="submit"]:hover{
+     color: darkgray;
+     background: white;
+     border: 1px solid darkgrey;
+ }

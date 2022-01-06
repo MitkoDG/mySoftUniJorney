@@ -1,0 +1,20 @@
+body {
+    background: #F0F1F5;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header > p {
+    float: left;
+}
+
+nav {
+    text-align: right;
+}
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: orange;
+    text-decoration: none;
+}
