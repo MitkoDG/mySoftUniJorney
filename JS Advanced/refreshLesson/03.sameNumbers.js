@@ -28,3 +28,23 @@ function sameNumbers(input) {
 }
 sameNumbers(2222222);
 sameNumbers(1234);
+
+
+function solve(input) {
+    
+    let inputNumber = input.toString()
+    let isSame = true;
+    let sumOfDigits = 0;
+    let digitToCompare = inputNumber[0];
+    let numberL = inputNumber.length
+
+    for (let i = 0; i < numberL; i++) {
+        sumOfDigits += Number(inputNumber[index])
+
+        if (Number(inputNumber[index] !== digitToCompare) {
+            isSame = false;
+        }
+    }
+    console.log(isSame);
+    console.log(sumOfDigits);
+}
