@@ -13,3 +13,12 @@ function sortNum(input) {
     return result
 }
 sortNum([1, 65, 3, 52, 48, 63, 31, -3, 18, 56])
+
+
+
+// alternative
+
+// while (sortedL !== 0) {
+//     result.push(sorted.shift())
+//     result.push(sorted.pop())
+// }
