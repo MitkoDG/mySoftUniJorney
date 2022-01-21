@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM part 1</title>
+  </head>
+  <body>
+    <h1 id="heading">Hello DOM</h1>
+    <ul>
+      <li>BMW</li>
+      <li>Mecedess</li>
+      <li id='audi-car'>Audi</li>
+    </ul>
+    <!-- <p>презентациите не са съгласувани с преподавателите</p> 
+    пропускаме слайдове
+    html and css
+    -->
+
+    <button onclick="onClickButton()">Write</button>
+    <button onclick="changeTitle()">Title</button>
+    <button onclick="changeCar()">Modify Audi</button>
+
+
+    <!-- <script src="demo.js"></script> -->
+    <script>
+      function changeTitle() {
+        let headingElement = document.getElementById("heading");
+        headingElement.innerHTML = "Hello from <em>JS</em>"; // alt textContent but wont be able to load the html tags
+      }
+      function changeCar() {
+          let carElement = document.getElementById('audi-car')
+          carElement.textContent = 'Audi Quatro'
+      }
+    </script>
+  </body>
+</html>
