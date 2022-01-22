@@ -55,3 +55,6 @@ span {
      background: white;
      border: 1px solid darkgrey;
  }
+ a:visited {
+   color: red;
+ }

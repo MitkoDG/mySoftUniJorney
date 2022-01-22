@@ -1,20 +1,103 @@
 body {
-    background: #F0F1F5;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+  background: #f0f1f5;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 2rem 12rem;
 }
 header > p {
-    float: left;
+  float: left;
+  color: #f9690e;
+}
+
+header section:nth-child(1) i {
+  font-size: 30px;
+  padding-right: 5px;
+  vertical-align: middle;
 }
 
 nav {
-    text-align: right;
+  text-align: right;
+}
+nav ul {
+  float: right;
 }
 nav ul li {
-    display: inline-block;
+  display: inline-block;
+  padding: 0 5px;
 }
 
 nav ul li a {
-    color: orange;
-    text-decoration: none;
+  color: #f9690e;
+  text-decoration: none;
 }
+main article {
+    width: 270px;   
+    display: inline-block;
+    padding: 30px 60px;
+    background: #f9690e;
+    color: white;
+  }
+main section:nth-child(1) {
+  margin-top: 3rem;
+
+  background-image: url("../Requirements-and-Resources/Images/picture.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 11rem 15px;
+}
+
+main section:nth-child(1) {
+  text-align: center;
+  color: white;
+}
+main section:nth-child(1) span {
+  color: #f9690e;
+}
+
+main section:nth-child(1) button {
+  /* background: #f9690e;
+  border: none;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 12px; */
+
+  margin-top: 50px;
+  padding: 10px 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background: #f9690e;
+  border: none;
+}
+main section:nth-child(1) button:hover {
+    background: white;
+    color: #f9690e;
+    cursor: pointer;
+  }
+
+main section:nth-child(2) article {
+  display: inline-block;
+  background-color: #f9690e;
+  color: white;
+  width: 30%;
+  padding: 23px;
+}
+main section:nth-child(2) article h3 {
+  text-align: center;
+}
+
+footer article {
+  display: inline-block;
+  width: 48%;
+}
+
+footer article:nth-child(2) {
+  text-align: right;
+}
+footer i {
+  padding: 16px;
+}
+/* a:visited {
+  color: #f9690e;
+} */
