@@ -1,0 +1,15 @@
+h1 {
+    margin: 10px 20px 30px 40px;
+    padding: 20px 0;
+    color: #00539F;
+    /* text-shadow: 3px 3px 1px black; */
+    border: solid 10px;
+  }
+  
+  header.site-header {
+      background-color: grey;
+      color: wheat;
+  }
+  main article#article-1 {
+    color: red;
+  }
