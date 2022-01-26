@@ -7,6 +7,6 @@ function extract(content) {
     for (const match of matches) {
         result.push(match[1])
     }
-
+    
     return result.join('; ');
 }
