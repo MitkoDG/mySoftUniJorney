@@ -73,7 +73,10 @@ function solution() {
     // let elH3 = document.createElement("h3");
     // elH3.textContent = "Thank you for your reservation!";
     // document.getElementById("block").appendChild(elH3);
+
+
     const blockDiv = Array.from(document.querySelectorAll('#block'));
+  
     let newH3 = document.createElement('h3');
     newH3.textContent = "Thank you for your reservation!";
 
