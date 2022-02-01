@@ -1,0 +1,24 @@
+{
+  "name": "mysoftunijorney",
+  "version": "1.0.0",
+  "description": "This repository is all about my code I have written during my course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MitkoDG/mySoftUniJorney.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MitkoDG/mySoftUniJorney/issues"
+  },
+  "homepage": "https://github.com/MitkoDG/mySoftUniJorney#readme",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^9.2.0"
+  }
+}

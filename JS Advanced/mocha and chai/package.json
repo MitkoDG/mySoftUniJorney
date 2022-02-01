@@ -4,7 +4,7 @@
   "description": "unit test lesson",
   "main": "app.js",
   "scripts": {
-    "test": ".node_modules/.bin/mocha"
+    "test": "mocha./*.test.js"
   },
   "keywords": [
     "lesson"
