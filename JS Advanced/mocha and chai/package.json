@@ -1,15 +1,13 @@
 {
-  "name": "hello-world",
+  "name": "js-advanced-unit-testing",
   "version": "1.0.0",
-  "description": "unit test lesson",
-  "main": "app.js",
+  "description": "",
+  "main": "1-sub-sum.js",
   "scripts": {
-    "test": "mocha./*.test.js"
+    "test": "mocha ./*.test.js"
   },
-  "keywords": [
-    "lesson"
-  ],
-  "author": "DDG",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "chai": "^4.3.6",
