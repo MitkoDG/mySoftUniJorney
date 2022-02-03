@@ -1,13 +1,12 @@
 {
-  "name": "js-advanced-unit-testing",
+  "name": "mocha-and-chai",
   "version": "1.0.0",
-  "description": "",
-  "main": "1-sub-sum.js",
+  "description": "unit tests",
+  "main": "./*test.js",
   "scripts": {
-    "test": "mocha ./*.test.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "author": "DDG",
   "license": "ISC",
   "dependencies": {
     "chai": "^4.3.6",
