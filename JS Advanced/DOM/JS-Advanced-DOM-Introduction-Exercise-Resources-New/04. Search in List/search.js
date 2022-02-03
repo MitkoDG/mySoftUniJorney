@@ -5,16 +5,15 @@ function search() {
    let count = 0;
 
    for (let town of townsElement) {
-      if (town.textContent.includes(userWord) && userWord !== '') {
-         town.style.fontWeight = 'bold';
+      if (town.textContent.includes(userWord) && userWord !== "") {
          town.style.textDecoration = 'underline';
+         town.style.fontWeight = 'bold';
          count++;
       } else {
-         town.style.fontWeight = 'normal';
          town.style.textDecoration = 'none';
+         town.style.fontWeight = 'normal';
       }
    }
-   match.textContent = `${count} matches found`
-
-
+   match.textContent = `${count} matches found`;
+   document.getElementById('searchText').value = '';
 }

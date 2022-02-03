@@ -28,7 +28,7 @@ function solve() {
   } else {
     result = 'Error!'
   }
-  
+
   let resultElement = document.getElementById('result');
   resultElement.textContent = result
 
