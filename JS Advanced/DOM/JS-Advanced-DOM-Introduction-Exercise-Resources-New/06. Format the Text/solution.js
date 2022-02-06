@@ -23,8 +23,4 @@ function solve() {
     pTag.textContent = text;
     resultDiv.appendChild(pTag)
   }
-
-
-
-
 }
