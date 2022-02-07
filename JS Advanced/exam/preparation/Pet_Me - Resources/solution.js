@@ -14,7 +14,7 @@ function solve() {
   addButton.addEventListener("click", addItem);
 
   function addItem(ev) {
-    ev.preventDefault(); // doing what ?
+    ev.preventDefault();
 
     if (!(name.value && Number(age.value) && kind.value && currOwner.value)) { // checking for empty input and correct parse to num 
       return;
