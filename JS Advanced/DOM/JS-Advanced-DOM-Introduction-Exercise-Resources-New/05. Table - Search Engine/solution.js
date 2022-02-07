@@ -26,7 +26,5 @@ function solve() {
       }
     }
     input.value = '';
-
-
   }
 }
