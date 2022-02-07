@@ -107,7 +107,6 @@
 // }
 
 function solve() {
-<<<<<<< Updated upstream
    document.querySelector('#btnSend').addEventListener('click', onClick);
 
    function onClick () {
@@ -213,29 +212,3 @@ function solve() {
      }
    }
  }
-=======
-  document.getElementById('btnSend').addEventListener("click", onClick)
-  let getInputText = document.querySelector('textarea').value;
-  let bestRestaurantP = document.querySelector('#bestRestaurant p')
-  let bestRestaurantW = document.querySelector('#workers p')
-
-  function onClick(ev) {
-
-
-
-  }
-
-
-
-
-
-
-
-
-
-
-}
-solve()
-
-// ["PizzaHut - Peter 500, George 300, Mark 800","TheLake - Bob 1300, Joe 780, Jane 660"]
->>>>>>> Stashed changes
