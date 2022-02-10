@@ -61,6 +61,7 @@ function solve() {
                 let hideSection = document.querySelector('eventTarget.parentElement.parentElement + tr')
                 console.log(hideSection);
                 eventTarget.parentElement.parentElement.remove();
+                // nextSibiling 'tr'
             }
             // when click clear the input fields
             clearInput()
