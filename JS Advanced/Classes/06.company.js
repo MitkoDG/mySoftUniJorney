@@ -1,41 +1,63 @@
-class Hex {
-  constructor(value) {
-    this.value = value;
+class Company {
+
+  constructor() {
+      this.departments = [];
   }
-  toString() {
-    return `0x` + this.value.toString(16).toUpperCase();
+
+  addEmployee(name, salary, position, department) {
+      if (!this.isValid(name)
+          || !this.isValid(salary)
+          || !this.isValid(position)
+          || !this.isValid(department)
+          || Number(salary) < 0) {
+          throw new Error('Invalid input!');
+      }
+
+      let newEployee = {
+          name,
+          salary,
+          position
+      };
+
+      if (!this.departments[department]) {
+          this.departments[department] = [];
+      }
+
+      this.departments[department].push(newEployee);
+      return `New employee is hired. Name: ${name}. Position: ${position}`;
   }
-  valueOf() {
-    return this.value;
+
+  bestDepartment() {
+      let bestDep = '';
+      let maxSalary = 0;
+
+      for (const [key, value] of Object.entries(this.departments)) {
+          let salary = 0;
+          value.forEach(e => {
+              salary += e.salary;
+          })
+          salary = salary / value.length;
+          if (salary > maxSalary) {
+              bestDep = key;
+              maxSalary = salary;
+          }
+      };
+      if (bestDep) {
+          let result = `Best Department is: ${bestDep}\nAverage salary: ${maxSalary.toFixed(2)}\n`;
+
+          Object.values(this.departments[bestDep]).sort((a, b) => b.salary - a.salary
+              || a.name.localeCompare(b.name)).
+              forEach(e => {
+                  let current = `${e.name} ${e.salary} ${e.position}\n`;
+                  result += current;
+              })
+          return result.trim();
+      }
   }
-  plus(input) {
-    if (typeof input == "object") {
-      let result = this.value + input.value;
-      return new Hex(result);
-    } else {
-      let result = this.value + input;
-      return new Hex(result);
-    }
-  }
-  minus(input) {
-    if (typeof input == "object") {
-      let result = this.value - input.value;
-      return new Hex(result);
-    } else {
-      let result = this.value - input;
-      return new Hex(result);
-    }
-  }
-  parse(number){
-    return parseInt(number, 16);
+
+  isValid(property) {
+      if (property !== null || property !== '' || property !== undefined) {
+          return true;
+      }
   }
 }
-
-let FF = new Hex(255);
-console.log(FF.toString());
-FF.valueOf() + 1 == 256;
-let a = new Hex(10);
-let b = new Hex(5);
-console.log(a.plus(b).toString());
-console.log(a.plus(b).toString() === "0xF");
-console.log(FF.parse("AAA"));
