@@ -19,5 +19,5 @@ console.log(map);
 
 // Iterate map
 for (const [key, value] of map) {
-    console.log(key);
+    console.log(key, value);
 }
