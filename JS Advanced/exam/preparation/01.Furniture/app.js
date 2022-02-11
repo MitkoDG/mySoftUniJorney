@@ -29,7 +29,7 @@ function solve() {
             let tdButtons = createAnElement('td', '', '', trClassInfo);
             let btnMore = createAnElement('button', 'More Info', 'moreBtn', tdButtons);
             let btnBuy = createAnElement('button', 'Buy it', 'buyBtn', tdButtons);
-            let trClassHide = createAnElement('tr', '', 'hide', tBody);
+            let trClassHide = createAnElement('tr', '', 'hide', tBody); // classList
             let tdYear = createAnElement('td', `Year: ${yearNum}`, '', trClassHide);
             let tdColspan = createAnElement('td', `Description: ${description.value}`, '', trClassHide);
             tdColspan.setAttribute('colspan', '3');
