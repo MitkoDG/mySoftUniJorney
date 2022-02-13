@@ -5,6 +5,9 @@ class Point {
     }
 
     static distance(firstPoint, secondPoint) {
+        if (firstPoint instanceof Point == false || secondPoint instanceof Point == false){
+            throw new TypeError('Parameter must be of type Point')
+        }
         let a = firstPoint.x - secondPoint.x;
         let b = firstPoint.y - secondPoint.y;
 
