@@ -23,7 +23,7 @@ class SummerCamp {
             return `The ${name} is already registered at the camp.`;
         }
 
-        let participant = { 
+        let participant = {
             name,
             condition,
             power: 100,
@@ -55,9 +55,9 @@ class SummerCamp {
         return `The ${name} removed successfully.`;
     }
 
-    timeToPlay (typeOfGame, participant1, participant2) {
+    timeToPlay(typeOfGame, participant1, participant2) {
         let player1 = this.listOfParticipants.find(x => x.name == participant1);
-        
+
         if (!player1) {
             throw new Error(`Invalid entered name/s.`);
         }
@@ -96,7 +96,7 @@ class SummerCamp {
     toString() {
         let result = [];
         result.push(`${this.organizer} will take ${this.listOfParticipants.length} participants on camping to ${this.location}`);
-        
+
         this.listOfParticipants
             .sort((a, b) => b.wins - a.wins)
             .forEach(x => {

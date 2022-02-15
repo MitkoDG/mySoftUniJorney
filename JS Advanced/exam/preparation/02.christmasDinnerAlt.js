@@ -44,6 +44,8 @@ class ChristmasDinner {
       throw new Error("This guest has already been invited");
     }
     this.guests[name] = dish;
+    return `${name} has been successfully cooked!`;
+
   }
 
   showAttendance() {
