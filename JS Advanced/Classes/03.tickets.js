@@ -13,6 +13,7 @@ function ticketSorter(tickets, sorting) {
     result.push(new Ticket(destination, price, status));
   });
   return result.sort((a, b) => {
+    console.log(a[sorting]);
     if (typeof a[sorting] === "number") {
       return a[sorting] - b[sorting];
     } else {

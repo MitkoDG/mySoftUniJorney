@@ -1,75 +1,62 @@
 function solution() {
-  // attach event listeners to input form
-  const [gifts, sent, discarded] = document.querySelectorAll("section ul");
-  const input = document.querySelector("input");
-  document.querySelector("button").addEventListener("click", addGift);
+  let [giftsList, sendGift, discardGift] = document.querySelectorAll('section ul');
+  let userInput = document.querySelector('input');
+  document.querySelector('button').addEventListener('click', addGift);
 
-  // create gift elements with buttons
-  function addGift() {
-    const name = input.value;
-    input.value = "";
+  // userInput.value = 'New car' // for test reason
 
-    const element = e("li", name, "gift");
-    const sendBtn = e("button", "Send", "sendButton");
-    const discardBtn = e("button", "Discard", "discardButton");
-    // sendBtn.setAttribute('id', 'sendButton');
-    // discardBtn.setAttribute('id', 'discardButton');
+  function addGift(event) {
+    event.preventDefault();
+    let inputValue = userInput.value;
+    let newLiGift = newEl('li',inputValue,'gift','');
+    let sendBtn = newEl('button','Send','',newLiGift);
+    sendBtn.setAttribute('id', 'sendButton');
+    let discBtn = newEl('button','Discard','',newLiGift);
+    discBtn.setAttribute('id', 'discardButton');
 
-    element.appendChild(sendBtn);
-    element.appendChild(discardBtn);
+    giftsList.appendChild(newLiGift);
 
-    sendBtn.addEventListener("click", () => sendGift(name, element));
-    discardBtn.addEventListener("click", () => discardGift(name, element));
-
-    gifts.appendChild(element);
-
-    sortGift();
+    sendBtn.addEventListener('click', sendGiftF);
+    discBtn.addEventListener('click', discGiftF);
+    userInput.value = '';
+    sortGifts()
   }
 
-  //logic for sending gifts
-  function sendGift(name, gift) {
-    gift.remove();
-    const element = e("li", name, "gift");
-    sent.appendChild(element);
-
-    // remove element from original list
-    // create new list item
-    // add element to new list
-  }
-  // logic for discarding gift
-
-  function discardGift(name, gift) {
-    gift.remove();
-    const element = e("li", name, "gift");
-    discarded.appendChild(element);
+  function sendGiftF(event) {
+    event.preventDefault();
+    let liElToSend = event.target.parentElement;
+    event.target.nextSibling.remove();
+    event.target.remove()
+    sendGift.appendChild(liElToSend);
   }
 
-  // sort gifts list
-  function sortGift() {
-    Array.from(gifts.children)
-      .sort((a, b) => a.textContent.localeCompare(b.textContent))
-      .forEach((g) => gifts.appendChild(g));
+  function discGiftF(event) {
+    event.preventDefault();
+    let liElToSend = event.target.parentElement;
+    event.target.previousSibling.remove();
+    event.target.remove()
+    discardGift.appendChild(liElToSend);
   }
 
-  function e(type, content, className) {
+  function sortGifts() {
+    Array.from(giftsList.children)
+      .sort((a,b)=>a.textContent.localeCompare(b.textContent))
+      .forEach((g)=>giftsList.appendChild(g));
+  }
+
+
+  function newEl(type, content, className, appender) {
     const result = document.createElement(type);
     result.textContent = content;
     if (className) {
       result.className = className;
     }
+    if (appender) {
+      appender.appendChild(result);
+    }
     return result;
   }
 }
-
-// function onClick(ev) {
-//     let position = document.querySelector('.card ul')
-//     let newGift = createAnElement('li',userInput,'gift', '')
-//     let newSendBtn = document.createElement('button');
-//     newSendBtn.name = 'Send'
-//     newSendBtn.setAttribute('id', 'sendButton');
-//     newSendBtn.appendChild(newGift)
-//     position.appendChild(newGift)
-// }
 
 // function createAnElement(type, content, attribute, appender) {
 //     const el = document.createElement(type);
