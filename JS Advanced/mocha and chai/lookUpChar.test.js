@@ -1,16 +1,16 @@
 const lookupChar = require("./lookUpChar.js");
 const { assert } = require("chai");
 
-describe('lookupChar function test',() =>{
+describe('lookupChar function test', () => {
 
-    it('Return char at index',()=>{
-        assert(lookupChar('Love',0)==='L');
+    it('Return char at index', () => {
+        assert(lookupChar('Love', 0) === 'L');
     });
-    it('Index over the string length',()=>{
-        assert(lookupChar('Love',10)==='Incorrect index');
+    it('Index over the string length', () => {
+        assert(lookupChar('Love', 10) === 'Incorrect index');
     });
-    it('Negative string index',()=>{
-        assert(lookupChar('Love',-10)==='Incorrect index');
+    it('Negative string index', () => {
+        assert(lookupChar('Love', -10) === 'Incorrect index');
     });
 
 
