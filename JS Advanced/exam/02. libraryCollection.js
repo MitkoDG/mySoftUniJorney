@@ -86,12 +86,14 @@ class LibraryCollection {
     }
 
     addBook(bookName, bookAuthor) {
+        this.capacity = Number(this.capacity);
         let isFound = this.books.find(b => b.bookName == bookName);
         if (this.books.length >= this.capacity) {
             throw new Error("Not enough space in the collection.")
         }
         if (!isFound) {
             this.books.push({ bookName, bookAuthor, payed: false, })
+            return `The ${bookName}, with an author ${bookAuthor}, collect.`
         }
     }
     payBook(bookName) {
@@ -121,20 +123,36 @@ class LibraryCollection {
 
     }
     getStatistics(bookAuthor) {
-        let emptySlots = this.capacity - this.books.length;
-        let result = [];
-        let isFound = this.books.find(b => b.bookName == bookName);
-        result.push(`The book collection has ${emptySlots} empty spots left.`)
+        let emptySlots = Number(this.capacity) - this.books.length;
+        let message = `The book collection has ${emptySlots} empty spots left.\n`
+        let isFound = this.books.find(el => el.bookAuthor === bookAuthor);
         if (!bookAuthor) {
-            this.books.sort((a, b) => a.bookName.localeCompare(b.bookName);
-
-            if (a.bookName.payed) {
-                result.push(`${bookName} == ${bookAuthor} - Has Paid.`)
-            } else {
-                result.push(`${a.bookName} == ${bookAuthor} - Not Paid.`)
+            let result = this.books.sort((a, b) => a.bookName.localeCompare(b.bookName))
+                .reduce((acc, el) => {
+                    if (el.payed) {
+                        acc.push(`${el.bookName} == ${el.bookAuthor} - Has Paid.`)
+                    } else {
+                        acc.push(`${el.bookName} == ${el.bookAuthor} - Not Paid.`)
+                    }
+                    return acc
+                }, []);
+            return message += result.join('\n')
+        } else if (bookAuthor) {
+            if (!isFound) {
+                throw new Error(`${bookAuthor} is not in the collection.`)
             }
-
+            let result = this.books.filter((el) => el.bookAuthor === bookAuthor)
+                .reduce((acc, el) => {
+                    if (el.payed === true) {
+                        acc.push(`${el.bookName} == ${el.bookAuthor} - Has Paid.`)
+                    } else {
+                        acc.push(`${el.bookName} == ${el.bookAuthor} - Not Paid.`)
+                    }
+                    return acc;
+                }, [])
+                return result.join('\n')
         }
+
     }
 }
 
@@ -170,19 +188,19 @@ class LibraryCollection {
 // Don Quixote remove from the collection.
 // In Search of Lost Time need to be paid before removing from the collection.
 
-const library = new LibraryCollection(2)
-console.log(library.addBook('Don Quixote', 'Miguel de Cervantes'));
-console.log(library.getStatistics('Miguel de Cervantes'));
+// const library = new LibraryCollection(2)
+// console.log(library.addBook('Don Quixote', 'Miguel de Cervantes'));
+// console.log(library.getStatistics('Miguel de Cervantes'));
 
 // The Don Quixote, with an author Miguel de Cervantes, collect.
 // Don Quixote == Miguel de Cervantes - Not Paid.
 
-// const library = new LibraryCollection(5)
-// library.addBook('Don Quixote', 'Miguel de Cervantes');
-// library.payBook('Don Quixote');
-// library.addBook('In Search of Lost Time', 'Marcel Proust');
-// library.addBook('Ulysses', 'James Joyce');
-// console.log(library.getStatistics());
+const library = new LibraryCollection(5)
+library.addBook('Don Quixote', 'Miguel de Cervantes');
+library.payBook('Don Quixote');
+library.addBook('In Search of Lost Time', 'Marcel Proust');
+library.addBook('Ulysses', 'James Joyce');
+console.log(library.getStatistics());
 
 // The book collection has 2 empty spots left.
 // Don Quixote == Miguel de Cervantes - Has Paid.
