@@ -10,7 +10,8 @@ function loadRepos() {
          }
          return res.json()
       })
-      .then(handleResponse) // data => console.log(data)
+      .then(handleResponse) 
+      // .then(data => console.log(data))
       .catch(handleError)
 
    function handleResponse(data) {
@@ -22,6 +23,7 @@ function loadRepos() {
          
          liElement.innerHTML = `<a href="${repo.html_url}">${repo.full_name}</a>`
          // console.log(repo.full_name, repo.html_url);
+         // console.log(repo)
          list.appendChild(liElement);
 
       }
