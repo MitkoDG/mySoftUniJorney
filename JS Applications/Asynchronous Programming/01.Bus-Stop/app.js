@@ -7,7 +7,7 @@ async function getInfo() {
 
     const stopId = document.getElementById('stopId').value;
     const stopName = document.getElementById('stopName');
-    const timeTableElement = document.getElementById('buses')
+    const timeTableElement = document.getElementById('buses');
     const url = `http://localhost:3030/jsonstore/bus/businfo/${stopId}`;
 
     try {
