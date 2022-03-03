@@ -24,17 +24,21 @@ async function onLoad() {
         liEl.textContent = `${e.person}: ${e.phone}`
         let btnEl = document.createElement('button')
         btnEl.textContent = 'Delete'
-        btnEl.addEventListener('click', deleteBtn)
+        btnEl.addEventListener('click', onDelete)
         liEl.appendChild(btnEl)
         phonebook.appendChild(liEl)
     })
 }
 
-function deleteBtn() {
-
+async function onDelete() {
+    const id = event.target.dataset.id
+    if (id != undefined) {
+        await deleteContact(id)
+        event.target.parentElement.remove();
+    }
 }
 
-// let message = `{${inputPerson.value}, ${inputPhone.value}}`
+let message = `{${inputPerson.value}, ${inputPhone.value}}`
 async function createContact(contact) {
     const res = await fetch(url, {
         method: 'post',
