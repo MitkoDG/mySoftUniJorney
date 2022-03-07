@@ -1,49 +1,44 @@
 function attachEvents() {
-    document.getElementById('refresh').addEventListener('click', loadMessages);
+    document.getElementById('submit').addEventListener('click',onSubmit)
+    document.getElementById('refresh').addEventListener('click',onRefresh)
 
-    document.getElementById('submit').addEventListener('click', onSubmit);
-    loadMessages();
 }
-
-
-const authorInput = document.querySelector('[name="author"]');
-const contentInput = document.querySelector('[name="content"]');
-const list = document.getElementById('messages');
-
-attachEvents();
+attachEvents()
+let url = 'http://localhost:3030/jsonstore/messenger'
+let list = document.getElementById('messages');
 
 async function onSubmit() {
-    const author = authorInput.value;
-    const content = contentInput.value;
+    let author = document.querySelector('[name="author"]').value;
+    let content = document.querySelector('[name="content"]').value;
 
-    const result = await createMessage({ author, content });
+    let newMsg = await createMsg({author, content});
 
-    contentInput.value = "";
-    list.value += '\n' + `${author}: ${content}`;
+    // list.value+= '\n' + `${author}: ${content}`
+    await onRefresh()
 
 }
 
-async function loadMessages() {
-    const url = 'http://localhost:3030/jsonstore/messenger';
-    const res = await fetch(url);
-    const data = await res.json();
+async function onRefresh() {
+    list.value = ''
+    let res = await fetch(url);
+    let data = await res.json();
 
-    const messages = Object.values(data);
+    Object.values(data).forEach(m=>{
+        list.value += (`${m.author}: ${m.content}'\n'`)
+    })
 
-    list.value = messages.map(m => `${m.author}: ${m.content}`).join('\n')
 }
 
-async function createMessage(message) {
-    const url = 'http://localhost:3030/jsonstore/messenger';
+async function createMsg(message) {
     const options = {
         method: 'post',
-        headers: {
-            'Content-Type': 'application/json'
+        headers:{
+            'content-type': 'aplication-json'
         },
         body: JSON.stringify(message)
     };
     const res = await fetch(url, options);
-    const result = await res.json();
+    const result = res.json()
 
     return result;
 }
