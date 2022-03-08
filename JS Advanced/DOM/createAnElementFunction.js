@@ -11,3 +11,20 @@ function createAnElement(type, content, attribute, appender) {
     }
     return el;
 }
+
+function createElement(type, content, attribute = [],appender) {
+    const element = createElement(type);
+
+    if (content) {
+        element.textContent = content;
+    }
+    if (attribute.length > 0) {
+        for (let i = 0; i < attribute.length; i++) {
+            element.setAttribute(attribute[i],attribute[i+2])
+            
+        }
+    }
+    if (appender) {
+        appender.appendChild(element)
+    }
+}
