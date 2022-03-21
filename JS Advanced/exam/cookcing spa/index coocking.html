@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cookbook</title>
+    <link rel="stylesheet" href="/static/site.css">
+    <link rel="stylesheet" href="/static/recipe.css">
+    <link rel="stylesheet" href="/static/form.css">
+    <link rel="stylesheet" href="/static/comments.css">
+    <script src="/src/app.js" type="module"></script>
+</head>
+
+<body>
+    <header>
+        <h1><a href="/"><img src="/assets/logo.png">My Cookbook</a></h1>
+        <nav>
+            <a id="catalogLink" href="/catalog" class="">Catalog</a>
+            <div id="user" style="display: inline-block;">
+                <a id="createLink" href="/create">Create Recipe</a>
+                <a id="logoutBtn" href="javascript:void(0)">Logout</a>
+            </div>
+            <div id="guest" style="display: none;">
+                <a id="loginLink" href="/login">Login</a>
+                <a id="registerLink" href="/register">Register</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home -->
+        <section id="home">
+            <div class="hero">
+                <h2>Welcome to My Cookbook</h2>
+            </div>
+            <header class="section-title">Recently added recipes</header>
+            <div class="recent-recipes">
+                <a class="card" href="/details/985d9eab-ad2e-4622-a5c8-116261fb1fd2">
+                    <article class="recent">
+                        <div class="recent-preview"><img src="/assets/fish.jpg"></div>
+                        <div class="recent-title">
+                            Roast Trout
+                        </div>
+                    </article>
+                </a>
+                <div class="recent-space"></div>
+                <a class="card" href="/details/8f414b4f-ab39-4d36-bedb-2ad69da9c830">
+                    <article class="recent">
+                        <div class="recent-preview"><img src="/assets/roast.jpg"></div>
+                        <div class="recent-title">
+                            Grilled Duck Fillet
+                        </div>
+                    </article>
+                </a>
+                <div class="recent-space"></div>
+                <a class="card" href="/details/3987279d-0ad4-4afb-8ca9-5b256ae3b298">
+                    <article class="recent">
+                        <div class="recent-preview"><img src="/assets/lasagna.jpg"></div>
+                        <div class="recent-title">
+                            Easy Lasagna
+                        </div>
+                    </article>
+                </a>
+            </div>
+            <footer class="section-title">
+                <p>Browse all recipes in the <a href="/catalog">Catalog</a></p>
+            </footer>
+        </section>
+
+        <!-- Catalog -->
+        <section id="catalog">
+            <div class="section-title">
+                <form id="searchForm">
+                    <input type="text" name="search" value="">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+            <header class="section-title">
+                <!--?lit$257387813$-->
+                Page
+                <!--?lit$257387813$-->1 of
+                <!--?lit$257387813$-->1
+                <!--?lit$257387813$-->
+                <!--?lit$257387813$-->
+                <!--?-->
+            </header>
+            <!--?lit$257387813$-->
+            <!---->
+            <a class="card" href="/details/3987279d-0ad4-4afb-8ca9-5b256ae3b298">
+                <article class="preview">
+                    <div class="title">
+                        <h2>
+                            <!--?lit$257387813$-->Easy Lasagna
+                        </h2>
+                    </div>
+                    <div class="small"><img src="/assets/lasagna.jpg"></div>
+                </article>
+            </a>
+            <!---->
+            <!---->
+            <a class="card" href="/details/8f414b4f-ab39-4d36-bedb-2ad69da9c830">
+                <article class="preview">
+                    <div class="title">
+                        <h2>
+                            <!--?lit$257387813$-->Grilled Duck Fillet
+                        </h2>
+                    </div>
+                    <div class="small"><img src="/assets/roast.jpg"></div>
+                </article>
+            </a>
+            <!---->
+            <!---->
+            <a class="card" href="/details/985d9eab-ad2e-4622-a5c8-116261fb1fd2">
+                <article class="preview">
+                    <div class="title">
+                        <h2>
+                            <!--?lit$257387813$-->Roast Trout
+                        </h2>
+                    </div>
+                    <div class="small"><img src="/assets/fish.jpg"></div>
+                </article>
+            </a>
+            <!---->
+            <footer class="section-title">
+                <!--?lit$257387813$-->
+                Page
+                <!--?lit$257387813$-->1 of
+                <!--?lit$257387813$-->1
+                <!--?lit$257387813$-->
+                <!--?lit$257387813$-->
+                <!--?-->
+            </footer>
+        </section>
+
+        <!-- Details -->
+        <section id="details">
+            <!--?lit$257387813$-->
+            <article>
+                <h2>
+                    <!--?lit$257387813$-->Easy Lasagna
+                </h2>
+                <div class="band">
+                    <div class="thumb"><img src="/assets/lasagna.jpg"></div>
+                    <div class="ingredients">
+                        <h3>Ingredients:</h3>
+                        <ul>
+                            <!--?lit$257387813$-->
+                            <!---->
+                            <li>
+                                <!--?lit$257387813$-->1 tbsp Ingredient 1
+                            </li>
+                            <!---->
+                            <!---->
+                            <li>
+                                <!--?lit$257387813$-->2 cups Ingredient 2
+                            </li>
+                            <!---->
+                            <!---->
+                            <li>
+                                <!--?lit$257387813$-->500 g Ingredient 3
+                            </li>
+                            <!---->
+                            <!---->
+                            <li>
+                                <!--?lit$257387813$-->25 g Ingredient 4
+                            </li>
+                            <!---->
+                        </ul>
+                    </div>
+                </div>
+                <div class="description">
+                    <h3>Preparation:</h3>
+                    <!--?lit$257387813$-->
+                    <!---->
+                    <p>
+                        <!--?lit$257387813$-->Prepare ingredients
+                    </p>
+                    <!---->
+                    <!---->
+                    <p>
+                        <!--?lit$257387813$-->Mix ingredients
+                    </p>
+                    <!---->
+                    <!---->
+                    <p>
+                        <!--?lit$257387813$-->Cook until done
+                    </p>
+                    <!---->
+                </div>
+                <!--?lit$257387813$-->
+                <div class="controls">
+                    <a class="actionLink" href="/edit/3987279d-0ad4-4afb-8ca9-5b256ae3b298">✎ Edit</a>
+                    <a class="actionLink" href="javascript:void(0)">✖ Delete</a>
+                </div>
+            </article>
+
+            <div><!---->
+                <div class="section-title">
+                    Comments for <!--?lit$6262580635$-->Grilled Duck Fillet
+                </div>
+                <!--?lit$6262580635$-->
+                <article class="new-comment">
+                    <!--?lit$6262580635$-->
+                    <h2>New comment</h2>
+                    <form id="commentForm">
+                        <textarea name="content" placeholder="Type comment"></textarea>
+                        <input type="submit" value="Add comment">
+                    </form>
+                </article>
+                <div class="comments">
+                    <!--?lit$6262580635$-->
+                <ul>
+                    <!--?lit$6262580635$--><!---->
+                <li class="comment">
+                    <header><!--?lit$6262580635$-->peter@abv.bg</header>
+                    <p><!--?lit$6262580635$-->Great recipe!</p>
+                </li><!---->
+                </ul>
+                </div></div>
+        </section>
+
+        <!-- Login -->
+        <section id="login">
+            <article>
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <label>E-mail: <input type="text" name="email"></label>
+                    <label>Password: <input type="password" name="password"></label>
+                    <input type="submit" value="Login">
+                </form>
+            </article>
+        </section>
+
+        <!-- Register -->
+        <section id="register">
+            <article>
+                <h2>Register</h2>
+                <form id="registerForm">
+                    <label>E-mail: <input type="text" name="email"></label>
+                    <label>Password: <input type="password" name="password"></label>
+                    <label>Repeat: <input type="password" name="rePass"></label>
+                    <input type="submit" value="Register">
+                </form>
+            </article>
+        </section>
+
+        <!-- Create -->
+        <section id="create">
+            <article>
+                <h2>New Recipe</h2>
+                <form id="createForm">
+                    <label>Name: <input type="text" name="name" placeholder="Recipe name"></label>
+                    <label>Image: <input type="text" name="img" placeholder="Image URL"></label>
+                    <label class="ml">Ingredients: <textarea name="ingredients"
+                            placeholder="Enter ingredients on separate lines"></textarea></label>
+                    <label class="ml">Preparation: <textarea name="steps"
+                            placeholder="Enter preparation steps on separate lines"></textarea></label>
+                    <input type="submit" value="Create Recipe">
+                </form>
+            </article>
+        </section>
+
+        <!-- Edit -->
+        <section id="edit">
+            <article>
+                <h2>Edit Recipe</h2>
+                <form id="editForm">
+                <input type="hidden" name="_id" value="3987279d-0ad4-4afb-8ca9-5b256ae3b298">
+                    <label>Name: <input type="text" name="name" placeholder="Recipe name"></label>
+                    <label>Image: <input type="text" name="img" placeholder="Image URL"></label>
+                    <label class="ml">Ingredients: <textarea name="ingredients" placeholder="Enter ingredients on separate lines"></textarea></label>
+                    <label class="ml">Preparation: <textarea name="steps" placeholder="Enter preparation steps on separate lines"></textarea></label>
+                    <input type="submit" value="Save Changes">
+                </form>
+            </article>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
