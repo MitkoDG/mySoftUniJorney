@@ -1,14 +1,8 @@
-const layout = require('../views/layout');
-const homePage = `
-<div>
-<h1>My Page</h1>
-<p>Welcome to my Page</p>
-</div>
-`;
+const { loadTemplate, layout } = require('../util/template');
 
 
-
-module.exports = (req, res) => {
-    res.write(layout(homePage)),
-        res.end();
-}
+module.exports = async (req, res) => {
+    const homePage = await loadTemplate('home')
+    res.write(await layout(homePage)),
+    res.end();
+};
