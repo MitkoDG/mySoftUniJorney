@@ -1,0 +1,13 @@
+html {
+    font: 16px/1.5 Verdana, sans-serif;
+}
+
+
+
+ul{
+    padding: 0%;
+}
+
+ul li {
+    list-style: none outside;
+}
