@@ -1,14 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Lab 1 - Blog Layout with inline-Block</title>
-</head>
-<body>
-    <article>
-        <header></header>
-    </article>
-</body>
+  </head>
+  <body>
+    <div class="site">
+      <header class="site-header">
+        <h1 class="site-title">
+          <a href="/">Blog title</a>
+        </h1>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Fun</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contacts</a></li>
+          </ul>
+        </nav>
+      </header>
+      <article>
+        <header>
+          <h1>Article title goes here</h1>
+          <p class="meta">
+            Published by <a href="#">DDG</a> on <time>12 of June 2022</time>
+          </p>
+        </header>
+        <section class="content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+            inventore explicabo quidem provident, necessitatibus voluptas, animi
+            consequatur vitae eum perspiciatis illo accusantium veniam vero aut,
+            numquam soluta architecto minus voluptatem.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+            inventore explicabo quidem provident, necessitatibus voluptas, animi
+            consequatur vitae eum perspiciatis illo accusantium veniam vero aut,
+            numquam soluta architecto minus voluptatem.
+          </p>
+        </section>
+        <footer>
+          <p>
+            Tags: <a href="#">something</a>, <a href="#">else</a>,
+            <a href="#">a lot</a>
+          </p>
+        </footer>
+      </article>
+
+      <footer class="site-footer">
+        <p>Blog Title 2022 &copy; All right reserved</p>
+      </footer>
+    </div>
+  </body>
 </html>

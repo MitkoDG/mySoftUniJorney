@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,400i,700,700i');
+
+html{
+    font: 16px/1.5 'PT Sans Narrow', sans-serif;
+}
+
+@media screen and (min-width:400px){
+    html{
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width:800px){
+    html{
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width:1000px){
+    html{
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width:1400px){
+    html{
+        font-size: 20px;
+    }
+}
+
+h1, h2, h3, h4, h5, h6{
+    font: 1em/1.2 'PT Serif', serif;
+}
+
+h1{
+    font-size: 2.2rem;
+}
+
+h2{
+    font-size: 2.0rem;
+}
+
+h3{
+    font-size: 1.8rem;
+}
+
+h4{
+    font-size: 1.6rem;
+}
+
+h5{
+    font-size: 1.4rem;
+}
+
+h6{
+    font-size: 1.2rem;
+}
+
+li{
+    list-style: none;
+}
