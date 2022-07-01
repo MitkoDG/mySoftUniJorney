@@ -1,0 +1,16 @@
+/* Set border-sizing */
+
+html {
+    box-sizing: border-box;
+}
+
+*,*::before, *::after{
+    box-sizing: inherit;
+}
+
+/* reset white space */
+
+* {
+    padding: 0;
+    margin: 0;
+}
