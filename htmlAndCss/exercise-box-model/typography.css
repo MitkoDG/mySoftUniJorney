@@ -13,6 +13,10 @@ body {
     font: inherit;
 }
 
+p, ul, ol {
+    padding-bottom: 1.5rem;
+}
+
 h1 {
     font-size: 3rem;
 }
@@ -23,7 +27,9 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: bold;
+    font-weight: normal;
+    padding-bottom: 0.3em;
+    padding-top: 0.5em;
 }
 
 h1 {font-size: 3.052rem;}
