@@ -17,6 +17,22 @@ p, ul, ol {
     padding-bottom: 1.5rem;
 }
 
+ul, ol {
+    padding-left: 2rem;
+}
+
+li ul, lu ol {
+    padding-top: 0.5rem;
+}
+
+ul > li {
+    list-style: circle;
+}
+
+ul li li{
+    list-style: square;
+}
+
 h1 {
     font-size: 3rem;
 }
@@ -38,3 +54,33 @@ h3 { font-size: 1.953rem; }
 h4 { font-size: 1.563rem; }
 h5 { font-size: 1.25rem; }
 h6 { font-size: 1rem; }
+
+blockquote {
+    padding-left: 2rem;
+    line-height: 1.5rem;
+}
+
+blockquote p:not(:last-child){
+    font-style: italic;
+}
+
+blockquote p:first-child::before {
+    display: inline-block;
+    content: '"';
+    font-size: 1rem;
+    line-height: 1;
+    padding-right: 1rem;
+}
+
+blockquote p:nth-last-child(2)::after {
+    display: inline-block;
+    content: '"';
+    font-size: 1rem;
+    line-height: 0;
+    padding-left: 1rem;
+}
+
+blockquote p:last-child{
+    font-weight: bold;
+    text-align: right;
+}
