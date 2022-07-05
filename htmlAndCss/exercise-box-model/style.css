@@ -3,6 +3,10 @@
 
 body {
     padding: 3rem;
+    background-image: linear-gradient(to right, #fff, #000);
+    /* background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed; */
 }
 
 ul.gallery {
@@ -28,4 +32,18 @@ ul.gallery img {
     border: 0.5rem solid rgb(0, 0, 0);
     padding: 1rem;
     background: #ffffff;
+ }
+
+ ul.icons li {
+    list-style: none outside;
+ }
+
+ ul.icons li::before {
+    display: inline-block;
+    content: '\f00c';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    padding-right: 0.5rem;
+    opacity: 0.5;
+    color: #090;
  }
