@@ -1,13 +1,8 @@
 @import url("typography.css");
+@import url("layout.css");
+@import url("navigation.css");
 
-body {
-  padding: 2rem;
-}
 
-.site {
-  max-width: 80rem;
-  margin: 0 auto;
-}
 
 .site-header {
   border-bottom: 4px solid #333;
@@ -20,59 +15,17 @@ body {
   color: black;
 }
 
-.site-header nav {}
 
-.site-header nav ul {}
 
-.site-header nav li {
-  display: inline-block;
-}
 
-.site-header nav a {
-  display: block;
-  padding: 0.5rem 1rem;
-  border: 1px solid gainsboro;
-
-}
-
-.site-header nav a:focus,
-.site-header nav a:hover {
-  border-color: black;
-  outline: none;
-
-}
-
-.site-footer {
-  border-top: 4px solid #333;
-  padding-top: 1rem;
-  margin-top: 2rem;
-}
-
-/*
-* Layout
-*/
 
 .site-content {
   /* border: 4px solid #000; */
 }
 
-.main-content,
-.main-sidebar {
-  display: inline-block;
-}
 
-.main-content {
-  /* border: 4px solid red; */
-  width: 68%;
-  padding-right: 2rem;
-}
 
-.main-sidebar {
-  /* border: 4px solid brown; */
-  width: 27%;
-  vertical-align: top;
-  padding-left: 1rem;
-}
+
 
 .main-sidebar ul {
   padding: 1rem;

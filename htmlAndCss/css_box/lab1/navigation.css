@@ -1,0 +1,38 @@
+
+.site-header nav {}
+
+.site-header nav ul {
+    /* overflow: hidden; */
+}
+
+.site-header nav ul::after {
+    display: block;
+    height: 0;
+    content: '';
+    clear: both;
+}
+
+.site-header nav li {
+  display: block;
+  float: left;
+}
+
+.site-header nav a {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 1px solid gainsboro;
+
+}
+
+.site-header nav a:focus,
+.site-header nav a:hover {
+  border-color: black;
+  outline: none;
+
+}
+
+.site-footer {
+  border-top: 4px solid #333;
+  padding-top: 1rem;
+  margin-top: 2rem;
+}
