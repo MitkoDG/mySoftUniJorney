@@ -36,6 +36,14 @@ body {
     float: left;
 }
 
+.box:hover {
+    background: red;
+}
+
+.box::before, .box::after {
+    content: 'Mitko';
+}
+
 article {
     background: red;
 }
