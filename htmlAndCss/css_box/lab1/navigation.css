@@ -3,6 +3,8 @@
 
 .site-header nav ul {
     /* overflow: hidden; */
+  background: black;
+
 }
 
 .site-header nav ul::after {
@@ -19,13 +21,16 @@
 
 .site-header nav a {
   display: block;
+  color: white;
   padding: 0.5rem 1rem;
-  border: 1px solid gainsboro;
+  /* border: 1px solid gainsboro; */
 
 }
 
 .site-header nav a:focus,
 .site-header nav a:hover {
+  background: red;
+  color: white;
   border-color: black;
   outline: none;
 
