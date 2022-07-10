@@ -1,0 +1,24 @@
+.ar-image-container {
+    background: red;
+    /* padding: 2rem; */
+    overflow: hidden;
+    position: relative;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
+}
+
+.ar-image-container::before {
+    display: block;
+    content: '';
+    padding-top: 56.25%;
+    background: green;
+}
+
+.ar-image-container img {
+    display: block;
+    /* display: none; */
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top:0; left: 0;
+}
