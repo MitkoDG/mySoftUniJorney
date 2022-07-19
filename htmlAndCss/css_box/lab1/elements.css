@@ -10,7 +10,7 @@
 .ar-image-container::before {
     display: block;
     content: '';
-    padding-top: 56.25%;
+    padding-top: 62.50%;
     background: green;
 }
 
@@ -20,5 +20,6 @@
     width: 100%;
     height: auto;
     position: absolute;
-    top:0; left: 0;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
 }
