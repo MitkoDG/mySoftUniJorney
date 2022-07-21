@@ -1,22 +1,44 @@
-
-.site-header nav {}
-
 .site-header nav ul {
-    /* overflow: hidden; */
+  /* overflow: hidden; */
   background: black;
-
 }
 
 .site-header nav ul::after {
-    display: block;
-    height: 0;
-    content: '';
-    clear: both;
+  display: block;
+  height: 0;
+  content: '';
+  clear: both;
 }
 
 .site-header nav li {
   display: block;
+  position: relative;
+}
+
+.site-header nav > ul > li {
   float: left;
+}
+
+.site-header nav > ul ul {
+  display: none;
+  position: absolute;
+  width: 13rem;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+}
+
+.site-header nav > ul > li > ul > li ul {
+  left: 100%;
+  top: 0;
+}
+
+.site-header nav li:hover {
+  /* outline: 2px solid #f00; */
+}
+
+.site-header nav li:hover > ul {
+  display: block;
 }
 
 .site-header nav a {
@@ -24,16 +46,15 @@
   color: white;
   padding: 0.5rem 1rem;
   /* border: 1px solid gainsboro; */
-
 }
 
+.site-header nav li:hover > a,
 .site-header nav a:focus,
 .site-header nav a:hover {
   background: red;
   color: white;
-  border-color: black;
+  /* border-color: black; */
   outline: none;
-
 }
 
 .site-footer {
