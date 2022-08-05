@@ -3,6 +3,9 @@
 @import url("navigation.css");
 @import url('elements.css');
 
+body {
+  background: #eee;
+}
 
 .site-header {
   border-bottom: 4px solid #333;

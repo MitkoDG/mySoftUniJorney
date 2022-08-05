@@ -7,6 +7,16 @@ body {
     margin: 0 auto;
 }
 
+.site-header{
+    position: relative;
+}
+
+.site-header section.search{
+    position: absolute;
+    top: 0;
+    right: 0%;
+}
+
 .site-content::after {
     display: block;
     height: 0;
