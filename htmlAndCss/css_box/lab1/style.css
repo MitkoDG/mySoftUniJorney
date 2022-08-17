@@ -1,22 +1,4 @@
-@import url("typography.css");
-@import url("layout.css");
-@import url("navigation.css");
-@import url('elements.css');
 
-body {
-  background: #eee;
-}
-
-.site-header {
-  border-bottom: 4px solid #333;
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
-}
-
-.site-header a {
-  text-decoration: none;
-  color: black;
-}
 
 .site-content {
   /* border: 4px solid #000; */
@@ -34,6 +16,15 @@ body {
 
 article.post {
   padding-bottom: 3rem;
+}
+
+article.post section.content p:first-child::first-letter {
+  font-size: 4rem;
+  float: left;
+  margin-right: 0.2rem;
+  margin-top: 0.8rem;
+  font-weight: bold;
+  font-family: PT serif, serif;
 }
 
 article.post img {

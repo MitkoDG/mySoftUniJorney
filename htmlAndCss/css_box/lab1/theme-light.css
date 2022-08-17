@@ -1,0 +1,27 @@
+body {
+    background: #EEE;
+  }
+  
+  .site-header {
+    border-bottom: 4px solid #333;
+  }
+  
+  .site-header a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .site-footer {
+    border-top: 4px solid #333;
+    padding-top: 1rem;
+    margin-top: 2rem;
+  }
+
+  /* Navigation */
+
+.site-header nav li:hover > a,
+.site-header nav a:focus,
+.site-header nav a:hover {
+  background: #F00;
+  color: #FFF;
+}

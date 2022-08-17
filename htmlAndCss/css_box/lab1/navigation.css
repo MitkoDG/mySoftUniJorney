@@ -1,6 +1,6 @@
 .site-header nav ul {
   /* overflow: hidden; */
-  background: black;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .site-header nav ul::after {
@@ -51,9 +51,6 @@
 .site-header nav li:hover > a,
 .site-header nav a:focus,
 .site-header nav a:hover {
-  background: red;
-  color: white;
-  /* border-color: black; */
   outline: none;
 }
 

@@ -9,6 +9,8 @@ body {
 
 .site-header{
     position: relative;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .site-header section.search{
