@@ -21,8 +21,9 @@ article.post {
 article.post section.content p:first-child::first-letter {
   font-size: 4rem;
   float: left;
-  margin-right: 0.2rem;
-  margin-top: 0.8rem;
+  margin-right: 0.4em;
+  margin-top: 0.8em;
+  margin-bottom: 0.1em;
   font-weight: bold;
   font-family: PT serif, serif;
 }
