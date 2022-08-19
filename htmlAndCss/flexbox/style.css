@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 62px;
+    padding-top: 4rem;
+}
+
+.container {
+    background: lightblue;
+    width: 80vw;
+    /* height: 80vh; */
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item {
+    flex: 1 0 15%;
+    border: 2px solid black;
+}
+
+.item:nth-child(1) {
+    font-size: 200px;
+}
+
+/* .container::before,
+.container::after{
+    display: block;
+    content: '';
+    border: none;
+    margin-bottom: 0;
+    order: 1000;
+} */
