@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="site.css" />
+    <title>Lab 1 - Blog Layout with inline-Block</title>
+  </head>
+
+  <body>
+    <div class="site">
+      <header class="site-header">
+        <h1 class="site-title">
+          <a href="/">Blog title</a>
+        </h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="post.html">Fun</a></li>
+            <li>
+              <a href="#">About</a>
+              <ul>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">History</a></li>
+                <li>
+                  <a href="#">Work</a>
+                  <ul>
+                    <li><a href="#">Project</a></li>
+                    <li>
+                      <a href="#">Project 2</a>
+                      <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Fun</a></li>
+                        <li><a href="#">About</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Project 3</a></li>
+                    <li><a href="#">Project 4</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Careers</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Contacts</a></li>
+          </ul>
+        </nav>
+
+        <section class="search">
+          <header>
+            <h4>Search</h4>
+          </header>
+          <input type="search" />
+        </section>
+
+      </header>
+
+      <main class="site-content">
+        <section class="main-content">
+          <article class="post">
+            <section class="ar-image-container">
+              <img
+                src="https://images.unsplash.com/photo-1656516401254-b333b9f79678?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1427&q=80"
+                alt=""
+                srcset=""
+              />
+            </section>
+            <header>
+              <h3>Article title goes here</h3>
+              <p class="meta">
+                Published by
+                <a href="#">DDG</a>
+                on
+                <time>12 of June 2022</time>
+              </p>
+            </header>
+
+            <section class="content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Doloribus inventore explicabo quidem provident, necessitatibus
+                voluptas, animi consequatur vitae eum perspiciatis illo
+                accusantium veniam vero aut, numquam soluta architecto minus
+                voluptatem.
+              </p>
+            </section>
+            <footer>
+              <p>
+                Tags:
+                <a href="#">something</a>
+                ,
+                <a href="#">else</a>
+                ,
+                <a href="#">a lot</a>
+              </p>
+            </footer>
+          </article>
+
+          <article class="post">
+            <section class="image">
+              <img
+                src="https://images.unsplash.com/photo-1656376406210-24191cf83c1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                alt=""
+                srcset=""
+              />
+            </section>
+            <header>
+              <h3>Article title goes here</h3>
+              <p class="meta">
+                Published by
+                <a href="#">DDG</a>
+                on
+                <time>12 of June 2022</time>
+              </p>
+            </header>
+
+            <section class="content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Doloribus inventore explicabo quidem provident, necessitatibus
+                voluptas, animi consequatur vitae eum perspiciatis illo
+                accusantium veniam vero aut, numquam soluta architecto minus
+                voluptatem.
+              </p>
+            </section>
+            <footer>
+              <p>
+                Tags:
+                <a href="#">something</a>
+                ,
+                <a href="#">else</a>
+                ,
+                <a href="#">a lot</a>
+              </p>
+            </footer>
+          </article>
+
+          <article class="post">
+            <section class="image">
+              <img
+                src="https://images.unsplash.com/photo-1655777399151-05244fc9ecb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                alt=""
+                srcset=""
+              />
+            </section>
+            <header>
+              <h3>Article title goes here</h3>
+              <p class="meta">
+                Published by
+                <a href="#">DDG</a>
+                on
+                <time>12 of June 2022</time>
+              </p>
+            </header>
+
+            <section class="content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Doloribus inventore explicabo quidem provident, necessitatibus
+                voluptas, animi consequatur vitae eum perspiciatis illo
+                accusantium veniam vero aut, numquam soluta architecto minus
+                voluptatem.
+              </p>
+            </section>
+            <footer>
+              <p>
+                Tags:
+                <a href="#">something</a>
+                ,
+                <a href="#">else</a>
+                ,
+                <a href="#">a lot</a>
+              </p>
+            </footer>
+          </article>
+        </section>
+        <aside class="main-sidebar">
+          
+
+          <section>
+            <header>
+              <h4>Latest posts</h4>
+            </header>
+            <ul>
+              <li>Ipsum dolor sit amet</li>
+              <li>Consectetur adipisicing elit.</li>
+              <li>Asperiores maiores omnis placeat ea tempora suscipit</li>
+              <li>molestiae quo consequatur aperiam ducimus fugit</li>
+            </ul>
+          </section>
+
+          <section>
+            <header>
+              <h4>Archive</h4>
+            </header>
+            <ul>
+              <li>January 2022</li>
+              <li>February 2022</li>
+            </ul>
+          </section>
+        </aside>
+      </main>
+
+      <footer class="site-footer">
+        <p>Blog Title 2022 &copy; All right reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

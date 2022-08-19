@@ -15,6 +15,10 @@
   position: relative;
 }
 
+.site-header nav > ul {
+  display: flex;
+}
+
 .site-header nav > ul > li {
   /* float: left; */
 }
