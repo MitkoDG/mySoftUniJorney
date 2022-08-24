@@ -1,0 +1,57 @@
+/* @import url(typography.css); */
+
+body {
+    padding: 4rem;    
+}
+
+.card-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    flex: 0 0 30%;
+    border: 1px solid grey;
+    border-radius: 0.5rem;
+}
+
+.card-media {
+
+}
+
+.image-main {
+    background: grey;
+}
+
+.image-main img {
+   opacity: 0; 
+    max-width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 1rem 1.2rem;
+    border: solid gray;
+    border-width: 1px 0;
+}
+
+.card-content .category {
+    display: block;
+    color: darkorange;
+    text-decoration: none;
+}
+
+.card-footer {
+    border: 1px solid grey;
+    display: flex;
+}
+
+.card-footer a{
+    flex-grow: 1;
+    display: block;
+    padding: 1em;
+    text-align: center;
+    text-decoration: none;
+    padding: 1rem;
+    color: black;
+}
