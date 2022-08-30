@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* body, html {
+    
+} */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard {
+    flex-grow: 1;
+    display: flex;
+}
+
+
+
+.dash-main {
+    background: #FFF;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.dash-header {
+    padding: 1rem;
+}
+
+.dash-content {
+    flex-grow: 1;
+}
+.dash-footer {
+    padding: 1rem;
+}

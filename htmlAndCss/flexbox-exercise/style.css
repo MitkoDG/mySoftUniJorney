@@ -1,0 +1,27 @@
+@import url('layout.css');
+
+body{
+    
+}
+
+.menu{
+
+}
+
+.menu li {
+    display: block;
+    list-style: none outside;
+
+}
+
+.menu a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.dash-header,
+.dash-footer,
+.dash-main-nav {
+    background: #333;
+    color: #FFF;
+}
