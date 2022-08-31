@@ -1,12 +1,29 @@
 @import url('layout.css');
 @import url(typography.css);
+@import url(navigation.css);
 
 body{
     
 }
 
-.menu{
+.container {
+    margin: 2rem;
+    background: #ccc;
+    display: flex;
 
+}
+
+.section {
+    background: #c6f;
+}
+
+.section.one {
+    flex-grow: 3;
+}
+
+.section.two {
+    flex-grow: 5;
+    background: orange;
 }
 
 .menu li {
@@ -22,6 +39,10 @@ body{
 
 .menu a.fas {
     font-family: inherit;
+}
+
+.menu a.fas::before {
+    font-family: "Font Awesome 6 Free"
 }
 
 .dash-header,
