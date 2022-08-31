@@ -10,19 +10,26 @@ body{
     margin: 2rem;
     background: #ccc;
     display: flex;
-
+    justify-content: space-between;
 }
 
 .section {
+    flex: 0 0 auto;
     background: #c6f;
 }
 
+
+
 .section.one {
-    flex-grow: 3;
+
+}
+
+.section.seek {
+    flex-grow: 1;
+    background: green;
 }
 
 .section.two {
-    flex-grow: 5;
     background: orange;
 }
 
