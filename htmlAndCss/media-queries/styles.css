@@ -1,5 +1,8 @@
 body {
    background: red; 
+   font-size: 48px;
+   font-size: 3em;
+   font-size: 300%;
 
 }
 
@@ -10,11 +13,11 @@ body {
     }
     p:before {
         display: block;
-        content: 'Hey, the screen is smaller than 600px';
+        content: 'Phone';
     }
 }
 
-@media (min-width: 600px) and (max-width: 1200px){
+@media (min-width: 600px) and (max-width: 1024px){
     body {
         background: rgb(135, 164, 250);
         font-size: 24px;
@@ -22,6 +25,18 @@ body {
     }
     p:before {
         display: block;
-        content: 'Hey, the screen is smaller than 1200px';
+        content: 'Tablet';
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        background: rgb(10, 33, 102);
+        font-size: 24px;
+        color: white;
+    }
+    p:before {
+        display: block;
+        content: 'Computer';
     }
 }
