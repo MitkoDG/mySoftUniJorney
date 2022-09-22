@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    border: 3px solid green;
+    height: 500px;
+    width: 500px;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background: red;
+}
