@@ -13,3 +13,9 @@ body {
     background-image: url(IMG_0117-950x355.jpg);
     background-repeat: no-repeat;
 }
+
+h3 {
+    background-image: linear-gradient(90deg, red, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+}
