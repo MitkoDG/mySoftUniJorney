@@ -1,0 +1,15 @@
+{
+  "name": "first-notejs-app",
+  "version": "1.0.0",
+  "description": "first lesson app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./app.js",
+    "dev": "nodemon ./app.js"
+  },
+  "author": "DDG",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
