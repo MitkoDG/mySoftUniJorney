@@ -25,7 +25,7 @@ class Stringer {
     }
   }
 }
-
+export default Stringer;
 let test = new Stringer("Test", 5);
 console.log(test.toString()); // Test
 
