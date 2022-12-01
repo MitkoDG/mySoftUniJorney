@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+.box {
+    font-weight: 700;
+    display: inline-block;
+    border: 3px solid gray;
+    width: 46%;
+    height: 300px;
+    padding: 10px;
+    margin: 5px 10px 20px 30px;
+    text-align: center;
+    
+}
+
+.first {
+    /* visibility: hidden; */
+
+}
+
+.first p {
+    vertical-align: middle;
+}
+.second {
+    border: 3px solid green;
+}
+
+div:last-of-type:hover {
+    background-color: antiquewhite;
+    color: red;
+}
