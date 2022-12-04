@@ -1,0 +1,40 @@
+.packages__container {
+    border: 3px solid black;
+    margin: 10px 0;
+    background-color: rgb(210, 247, 210);
+    width: 70%;
+    padding: 15px;
+}
+
+.packages__container a {
+    text-decoration: none;
+
+}
+.packages__title {
+    color: black;
+}
+
+.packages__topic {
+    color: grey;
+}
+
+.packages__description {
+    background: white;
+    border: 2px solid black;
+    padding: 10px;
+    color: black;
+}
+
+.highlighted {
+    background: rgb(1, 61, 1);
+
+}
+
+.highlighted h1 {
+    color: white;
+}
+
+.packages__container:hover,
+.packages__container:active {
+    border: 3px solid rgb(246, 162, 5);
+}
