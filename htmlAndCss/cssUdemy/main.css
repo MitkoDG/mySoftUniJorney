@@ -1,6 +1,6 @@
 #product-overview {
   background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
-    url("images/freedom.jpg") left 10% bottom 70%/cover no-repeat border-box,
+    url("images/freedom.jpg") left 10% bottom 70% / cover no-repeat border-box,
     #ff1b68;
   /* background-image: url("freedom.jpg");
     background-size: cover;
@@ -28,6 +28,27 @@
   position: absolute;
   bottom: 5%;
   left: 3%;
+  font-size: 1.6rem;
+}
+
+@media (min-width: 40rem) {
+  #product-overview {
+    height: 40vh;
+    background-position: 50% 25%;
+  }
+  #product-overview h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 60rem) {
+  #product-overview {
+    height: 50vh;
+    background-position: 50% 25%;
+  }
+  #product-overview h1 {
+    font-size: 5rem;
+  }
 }
 
 .plan__list {
