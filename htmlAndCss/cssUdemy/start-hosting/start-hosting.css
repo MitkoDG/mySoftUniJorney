@@ -1,0 +1,43 @@
+main {
+    padding-top: 1rem;
+}
+
+.signup-title {
+    font-size: 1.8rem;
+    text-align: center;
+    color: #ff5454;
+}
+
+.signup-form label,
+.signup-form select,
+.signup-form input {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.signup-form input[id*="term"],
+.signup-form input[id*="term"] + label {
+    display: inline-block;
+    width: auto;
+}
+
+.signup-form {
+    padding: 1rem;
+
+}
+.signup-form label {
+    font-weight: bold;
+}
+
+.signup-form button[type="submit"] {
+    display: block;
+    margin-top: 1rem;
+}
+
+@media (min-width: 40rem) {
+    .signup-form{
+        margin: auto;
+        max-width: 25rem;
+    }
+}
