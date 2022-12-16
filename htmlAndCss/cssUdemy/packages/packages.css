@@ -67,6 +67,7 @@ main {
   font-size: 1.2rem;
   color: #0e4f1f;
   background: white;
+  /* font-style font-variant font-weight font-size/line-height font-family*/
 }
 
 .clearfix {
