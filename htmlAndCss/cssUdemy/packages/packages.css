@@ -49,6 +49,7 @@ main {
 }
 
 .package__info {
+  font-family: "Roboto";
   padding: 1rem;
   border: 1px solid #0e4f1f;
   font-size: 1.2rem;
