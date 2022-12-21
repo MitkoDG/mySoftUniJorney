@@ -175,12 +175,15 @@ main {
 }
 
 .mobile-nav__items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 90%;
   height: 100%;
   list-style: none;
-  margin: 10% auto;
+  margin: 0 auto;
   padding: 0;
-  text-align: center;
 }
 
 .mobile-nav__item {
