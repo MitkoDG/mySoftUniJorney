@@ -73,6 +73,7 @@ body {
     margin: 10px;
     width: 350px;
     flex-shrink: 0;
+    flex-basis: 300px;
 }
 
 .item-6 {
@@ -82,5 +83,6 @@ body {
     border: 5px solid black;
     margin: 10px;
     width: 350px;
-    flex-shrink: 1;
+    flex-shrink: 0;
+
 }
