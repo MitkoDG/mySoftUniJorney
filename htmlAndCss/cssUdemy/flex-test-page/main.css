@@ -53,6 +53,7 @@ body {
     border: 5px solid black;
     margin: 10px;
     height: 250px;
+    align-self: auto;
 }
 
 .item-4 {
@@ -72,6 +73,7 @@ body {
     border: 5px solid black;
     margin: 10px;
     width: 350px;
+    align-self: flex-end;
 }
 
 .item-6 {
@@ -81,4 +83,6 @@ body {
     border: 5px solid black;
     margin: 10px;
     width: 350px;
+    align-self: flex-start;
+
 }
