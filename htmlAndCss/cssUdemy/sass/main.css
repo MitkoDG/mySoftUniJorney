@@ -5,6 +5,9 @@
 
 html {
   font-size: 94.75%; }
+  @media (min-width: 40rem) {
+    html {
+      font-size: 125%; } }
 
 body {
   font-family: Arial, sans-serif;
@@ -21,26 +24,25 @@ body {
   padding: 3rem 0;
   box-sizing: border-box; }
 
-.sass-introduction {
+.sass-section, .sass-introduction, .sass-details {
   border: 0.05rem solid #521751;
   background: #f7e1f6;
   padding: 2rem;
   text-align: center;
-  box-shadow: 0.2rem 0.2rem 0.1rem #ccc;
   width: 90%;
   box-sizing: border-box; }
+  @media (min-width: 40rem) {
+    .sass-section, .sass-introduction, .sass-details {
+      width: 30rem; } }
+
+.sass-introduction {
+  box-shadow: 0.2rem 0.2rem 0.1rem #ccc; }
 
 .sass-introduction p {
   margin: 0; }
 
 .sass-details {
-  border: 0.05rem solid #521751;
-  background: #f7e1f6;
-  padding: 1rem;
-  text-align: center;
-  margin: 2rem 0;
-  width: 90%;
-  box-sizing: border-box; }
+  margin: 2rem 0; }
 
 .section-header {
   border-bottom: 0.05rem solid #521751; }
@@ -71,13 +73,5 @@ body {
     color: white;
     background: #fa923f;
     border-color: #fa923f; }
-
-@media (min-width: 40rem) {
-  html {
-    font-size: 125%; }
-
-  .sass-introduction,
-  .sass-details {
-    width: 30rem; } }
 
 /*# sourceMappingURL=main.css.map */
