@@ -1,6 +1,6 @@
-$main-color: #521751;
+@import "_variables.scss";
 
-@import "typography.css";
+@import "typography.scss";
 
 html {
   font-size: 94.75%;
@@ -21,16 +21,16 @@ body {
     wrap: nowrap;
   }
   align-items: center;
-  padding: 3rem 0;
+  padding: $size-default * 3 0;
   box-sizing: border-box;
 }
 
 .sass-introduction {
-  border: 0.05rem solid $main-color;
-  background: #fae5ff;
-  padding: 2rem;
+  border: $border-default;
+  background: lighten(map-get($colors, main), 72%);
+  padding: $size-default * 2;
   text-align: center;
-  box-shadow: 0.2rem 0.2rem 0.1rem #ccc;
+  box-shadow: $size-tiny $size-tiny $size-tiny / 2 #ccc;
   width: 90%;
   box-sizing: border-box;
 }
@@ -40,26 +40,26 @@ body {
 }
 
 .sass-details {
-  border: 0.05rem solid $main-color;
-  background: #fae5ff;
-  padding: 1rem;
+  border: $border-default;
+  background: lighten(map-get($colors, main), 72%);
+  padding: $size-default;
   text-align: center;
-  margin: 2rem 0;
+  margin: $size-default * 2 0;
   width: 90%;
   box-sizing: border-box;
 }
 
 .section-header {
-  border-bottom: 0.05rem solid $main-color;
+  border-bottom: $size-tiny / 4 solid map-get($colors, main);
 }
 
 .section-header h1 {
-  margin: 0 0 1rem 0;
+  margin: 0 0 $size-default 0;
 }
 
 .documentation-links {
   list-style: none;
-  margin: 1rem 0 0 0;
+  margin: $size-default 0 0 0;
   padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -68,33 +68,29 @@ body {
   flex-direction: column;
 
   li {
-    margin: 0.2rem 0;
+    margin: $size-tiny 0;
     background: white;
   }
 
   .documentation-link {
     text-decoration: none;
-    color: $main-color;
+    color: map-get($colors, main);
     display: block;
-    padding: 0.2rem;
-    border: 0.05rem solid $main-color;
+    padding: $size-tiny;
+    border: $border-default;
   }
 
   .documentation-link:hover,
   .documentation-link:active {
     color: white;
-    background: #fa923f;
-    border-color: #fa923f;
+    background: map-get($colors, secondary);
+    border-color: map-get($colors, secondary);
   }
 }
 
 @media (min-width: 40rem) {
   html {
     font-size: 125%;
-  }
-
-  .container {
-    padding: 3rem 0;
   }
 
   .sass-introduction,
