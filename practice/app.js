@@ -55,16 +55,33 @@
 //     console.log(indexes);
 // };
 
-var twoSum = function (nums, target) {
-    let map = new Map();
-    for (let i = 0; i < nums.length; i++) {
-        let complement = target - nums[i];
-        if (map.has(complement)) {
-            console.log([map.get(complement), i]);
-            return [map.get(complement), i];
-        }
-        map.set(nums[i], i);
-    }
-};
-twoSum([2, 15, 11, 7], 9);
-twoSum([3,2,4], 6);
+// var twoSum = function (nums, target) {
+//     let map = new Map();
+//     for (let i = 0; i < nums.length; i++) {
+//         let complement = target - nums[i];
+//         if (map.has(complement)) {
+//             console.log([map.get(complement), i]);
+//             return [map.get(complement), i];
+//         }
+//         map.set(nums[i], i);
+//     }
+// };
+// twoSum([2, 15, 11, 7], 9);
+// twoSum([3,2,4], 6);
+
+function countTrue(arr) {
+    // let numTrue = 0;
+
+    // if (arr.lenght == 0) {
+    //     return 0;
+    // }
+    // for (let next of arr) {
+    //     if (next == true) {
+    //         numTrue++
+    //     }
+    // }
+    // return numTrue;
+    return arr.filter(t=>t==true).length;
+}
+
+countTrue([true, false, false, true, false]) // ➞ 2
