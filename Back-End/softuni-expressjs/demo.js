@@ -1,10 +1,14 @@
-const { log } = require('console');
 const fs = require('fs');
 
-const data = fs.readFileSync('./package.json');
+console.log('before');
+handleFiles();
+console.log('after');
 
-console.log(data.toString());
+function handleFiles() {
+    fs.readFile('./package.json', (err, data) => {
 
-fs.writeFileSync('./package_copy.json', data);
+        console.log(data.toString());
+    });
 
-console.log('copy complete');
+}
+
