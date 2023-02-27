@@ -8,6 +8,14 @@ app.get('/', (req,res) => {
     res.send('Hello buddy!');
 });
 
+app.get('/download', (req,res) => {
+    res.download('./demo.pdf');
+});
+
+app.get('/open', (req,res) => {
+    res.sendFile(__dirname + '/demo.pdf');
+});
+
 app.post('/catalog/:productId/details', (req,res) => {
     console.log(req.params);
     res.status(201);
