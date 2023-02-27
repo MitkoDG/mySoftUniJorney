@@ -16,6 +16,22 @@ app.get('/open', (req,res) => {
     res.sendFile(__dirname + '/demo.pdf');
 });
 
+const data = {
+    name: 'Mario',
+    age: 33
+}
+app.get('/data', (req,res) => {
+    res.json(data);
+});
+
+app.get('/contact', (req,res) =>{
+    res.redirect('/about');
+});
+
+app.get('/about', (req,res) => {
+    res.send('About page !')
+})
+
 app.post('/catalog/:productId/details', (req,res) => {
     console.log(req.params);
     res.status(201);
