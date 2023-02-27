@@ -1,6 +1,8 @@
 const express = require('express');
+const catalogRouter = require('./catalog');
 
 const app = express();
+app.use(catalogRouter);
 
 app.get('/', (req,res) => {
     // res.status(200);
@@ -31,22 +33,6 @@ app.get('/contact', (req,res) =>{
 app.get('/about', (req,res) => {
     res.send('About page !')
 })
-
-app.post('/catalog/:productId/details', (req,res) => {
-    console.log(req.params);
-    res.status(201);
-    res.send('Post created!');
-});
-
-app.get('/catalog', (req,res) => {
-    res.status(200);
-    res.send('Catalog Page!');
-});
-
-app.post('/catalog', (req,res) => {
-    res.status(201);
-    res.send('Post created!');
-});
 
 app.all('*', (req,res) => {
     res.status(404);
