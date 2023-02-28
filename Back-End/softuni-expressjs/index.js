@@ -1,8 +1,10 @@
 const express = require('express');
 const catalogRouter = require('./catalog');
+const logger = require('./logger');
 
 const app = express();
 app.use(catalogRouter);
+app.use(logger);
 
 app.get('/', (req,res) => {
     // res.status(200);
