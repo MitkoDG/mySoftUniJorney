@@ -5,6 +5,9 @@ const isAdmin = require('./guard');
 const logger = require('./logger');
 
 const app = express();
+
+app.use(express.static('static'));
+
 app.use(catalogRouter);
 app.use(logger);
 
