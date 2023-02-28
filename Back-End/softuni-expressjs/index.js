@@ -1,5 +1,6 @@
 const express = require('express');
 const catalogRouter = require('./catalog');
+const isAdmin = require('./guard');
 const logger = require('./logger');
 
 const app = express();
@@ -34,6 +35,10 @@ app.get('/contact', (req,res) =>{
 
 app.get('/about', (req,res) => {
     res.send('About page !')
+})
+
+app.get('/admin', isAdmin, (req,res) => {
+    res.send('Admin page !')
 })
 
 app.all('*', (req,res) => {
