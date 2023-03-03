@@ -1,4 +1,10 @@
 <h1>It`s working</h1>
 <span>Name: {{name}}</span><br>
 <span>Age: {{age}}</span><br>
-<span>What he has in the pocket is: {{items.pocket}}</span>
+{{!-- <span>What he has in the pocket is: {{items.pocket}}</span> --}}
+
+<ul>
+    {{#each items}}
+    <li>{{this}}</li>
+    {{/each}}
+</ul>

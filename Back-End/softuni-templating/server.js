@@ -12,9 +12,14 @@ app.get('/', (req, res) => {
     const data = {
         name: 'Pesho',
         age: 22,
-        items: {
-            pocket: 'Lindor'
-        }
+        // items: {
+        //     pocket: 'Lindor',
+        // }
+        items: [
+            'Sweets',
+            'Wallet',
+            'Coins',
+        ]
     }
     res.render('home', data)
 })
