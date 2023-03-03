@@ -10,6 +10,10 @@ app.set('views', './views');
 app.get('/', (req, res) => {
     // res.send('Its working')
     const data = {
+        user: {
+            username: 'Jason'
+        },
+        title: 'Home page',
         name: 'Pesho',
         age: 22,
         // items: {
