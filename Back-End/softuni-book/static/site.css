@@ -37,3 +37,7 @@ nav a:hover {
 main {
     padding: 0 32px;
 }
+
+.info {
+    font-style: italic;
+}
