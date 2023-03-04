@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { title } = require('process');
 
 let data = {};
 
@@ -9,7 +8,7 @@ async function init() {
     return (req, res, next) => {
         req.storage = {
             getAll,
-            getAll
+            getById
         },
             next();
     }

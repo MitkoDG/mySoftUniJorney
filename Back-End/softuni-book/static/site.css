@@ -41,3 +41,23 @@ main {
 .info {
     font-style: italic;
 }
+
+.book {
+    display: block;
+    margin-top: 16px;
+    padding: 8px 16px;
+};
+
+.book-title {
+    display: block;
+}
+
+.book-author {
+    padding: 8px 16px;
+
+}
+
+.detailsLink {
+    display: block;
+    float: right;
+}

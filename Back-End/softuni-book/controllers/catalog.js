@@ -8,4 +8,14 @@ router.get('/catalog', (req, res) => {
     res.render('catalog', ctx);
 });
 
+router.get('/create', (req, res) =>{
+    res.render('create');
+});
+
+router.post('/create', (req, res) =>{
+    // validate fields
+    // ...save in storage
+    res.redirect('/catalog');
+});
+
 module.exports = router
