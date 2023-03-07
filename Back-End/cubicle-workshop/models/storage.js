@@ -1,5 +1,5 @@
 const fs = require('fs');
-const uniqid = require('uniqid');
+const uniqid = require('uniqid'); 
 
 let data = {};
 
@@ -41,11 +41,12 @@ async function getById(id) {
 async function create(cube) {
     const id = uniqid();
     data[id] = cube;
-
+    console.log(data[id]);
     try {
-        await fs.writeFile('./models/data.json', JSON.stringify(data));
-    } catch (error) {
-        console.error('Error reading database');
+        await fs.writeFile('./models/data.json', JSON.stringify(data, null, 2));
+        console.log('Created new record');
+    } catch (err) {
+        console.error('Error reading database at create');
     }
 };
 
