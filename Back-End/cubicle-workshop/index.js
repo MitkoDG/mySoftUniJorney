@@ -1,12 +1,12 @@
 const express = require('express');
 const hbs = require('express-handlebars');
-const catalog = require('./controllers/catalog');
+const { catalog } = require('./controllers/catalog');
 
 const app = express();
 const port = 3000;
 
 app.engine('hbs', hbs({
-    extends: 'hbs'
+    extends: '.hbs'
 }));
 // app.engine('hbs', hbs.engine);
 
