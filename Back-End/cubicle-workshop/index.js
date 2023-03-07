@@ -15,7 +15,7 @@ app.engine('hbs', hbs({
 // app.engine('hbs', hbs.engine);
 
 app.set('view engine', 'hbs');
-app.use('static', express.static('static'))
+app.use('/static', express.static('static'));
 
 app.get('/', catalog);
 app.get('/about', about);

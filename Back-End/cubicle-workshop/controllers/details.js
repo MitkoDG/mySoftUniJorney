@@ -1,5 +1,5 @@
 module.exports = {
     details: (req, res) => {
-        res.render('details');
+        res.render('details', { title: 'Cubicle' });
     }
 };
