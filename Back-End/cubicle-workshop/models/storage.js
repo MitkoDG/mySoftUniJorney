@@ -15,7 +15,7 @@ async function init() {
     try {
         data = JSON.parse(await fs.readFile('./models/data.json'));
     } catch (err) {
-        console.error('Error reading database')
+        console.error('Error reading database ( init )')
     }
 
     return (req, res, next) => {
@@ -46,7 +46,7 @@ async function create(cube) {
         await fs.writeFile('./models/data.json', JSON.stringify(data, null, 2));
         console.log('Created new record');
     } catch (err) {
-        console.error('Error reading database at create');
+        console.error('Error reading database ( create )');
     }
 };
 
