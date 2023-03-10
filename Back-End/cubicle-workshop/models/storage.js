@@ -1,5 +1,5 @@
 const fs = require('fs');
-const uniqid = require('uniqid'); 
+const uniqid = require('uniqid');
 
 let data = {};
 
@@ -15,7 +15,7 @@ async function init() {
     try {
         data = JSON.parse(await fs.readFile('./models/data.json'));
     } catch (err) {
-        console.error('Error reading database ( init )')
+        console.error('Error reading database ( init )' + err)
     }
 
     return (req, res, next) => {
@@ -28,10 +28,25 @@ async function init() {
     };
 };
 
-async function getAll() {
-    return Object
+async function getAll(query) {
+    let cubes = Object
         .entries(data)
         .map(([id, v]) => Object.assign({}, { id }, v))
+
+    // filter cubes by query params
+
+    if (query.search) {
+        cubes = cubes.filter(c => c.name.toLowerCase().includes(query.search.toLowerCase()));
+    };
+
+    if (query.from) {
+        cubes = cubes.filter(c => c.difficulty >= Number(query.from))
+    }
+    if (query.to) {
+        cubes = cubes.filter(c => c.difficulty <= Number(query.to))
+    }
+
+    return cubes;
 };
 
 async function getById(id) {
@@ -41,12 +56,12 @@ async function getById(id) {
 async function create(cube) {
     const id = uniqid();
     data[id] = cube;
-    console.log(data[id]);
+
     try {
         await fs.writeFile('./models/data.json', JSON.stringify(data, null, 2));
         console.log('Created new record');
     } catch (err) {
-        console.error('Error reading database ( create )');
+        console.error('Error reading database ( create )' + err);
     }
 };
 
