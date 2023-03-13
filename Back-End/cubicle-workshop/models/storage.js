@@ -50,7 +50,13 @@ async function getAll(query) {
 };
 
 async function getById(id) {
-    return data[id];
+    const cube = data[id];
+    if (cube) {
+        return Object.assign({}, {id}, cube);
+        
+    } else {
+        return undefined;
+    }
 };
 
 async function create(cube) {
