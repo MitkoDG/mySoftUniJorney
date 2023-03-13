@@ -68,6 +68,9 @@ async function create(cube) {
 };
 
 async function edit(id, cube) {
+    if (!data[id]) {
+        throw new ReferenceError('No such ID in the database')
+    }
     data[id] = cube;
 
     await persist();

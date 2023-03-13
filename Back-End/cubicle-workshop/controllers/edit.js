@@ -12,8 +12,19 @@ module.exports = {
         }
         res.render('edit', { title: 'Edit Cube' })
     },
-    post(req, res) {
-        
-        res.redirect('/');
+    async post(req, res) {
+        const cube = {
+            name: req.body.name,
+            description: req.body.description,
+            imageUrl: req.body.imageUrl,
+            difficulty: Number(req.body.difficulty)
+
+        };
+        try {
+            await req.storage.edit(req.params.id, cube);
+            res.redirect('/');
+        } catch (err) {
+            res.redirect('404');
+        }
     }
 }
