@@ -22,7 +22,8 @@ async function init() {
         req.storage = {
             getAll,
             getById,
-            create
+            create,
+            edit
         };
         next();
     };
@@ -52,8 +53,8 @@ async function getAll(query) {
 async function getById(id) {
     const cube = data[id];
     if (cube) {
-        return Object.assign({}, {id}, cube);
-        
+        return Object.assign({}, { id }, cube);
+
     } else {
         return undefined;
     }
@@ -63,13 +64,23 @@ async function create(cube) {
     const id = uniqid();
     data[id] = cube;
 
+    await persist();
+};
+
+async function edit(id, cube) {
+    data[id] = cube;
+
+    await persist();
+}
+
+async function persist() {
     try {
         await fs.writeFile('./models/data.json', JSON.stringify(data, null, 2));
         console.log('Created new record');
     } catch (err) {
         console.error('Error reading database ( create )' + err);
     }
-};
+}
 
 module.exports = {
     init,
