@@ -18,9 +18,12 @@
   />
   <input type="submit" value="search" />
 </form>
-{{#each cubes}}
-{{> cube}}
-{{else}}
-<span>No cubes found ! <a href="/create">Create the First One</a></span>
-{{/each}}
-<script type="module" src="/js/app.js"></script>
+
+<div class="cube-list">
+  {{#each cubes}}
+  {{> cube}}
+  {{else}}
+  <span>No cubes found ! <a href="/create">Create the First One</a></span>
+  {{/each}}
+  <script type="module" src="/js/app.js"></script>
+</div>
