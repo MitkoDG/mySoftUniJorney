@@ -1,36 +1,31 @@
 const mongoose = require('mongoose');
+const Cat = require('./models/Cat');
 
 start();
 
 async function start() {
-    const uri = 'mongodb://localhost:27017/testdb';
+    // const uri = 'mongodb+srv://retimid:password@ddgtest.w6g8wni.mongodb.net/test'
+    const uri = 'mongodb://127.0.0.1:27017/testdb';
 
     mongoose.connect(uri, {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
     });
-
     console.log('Connected to the database - Successful !');
 
-    const catSchema = new mongoose.Schema({
-        name: String,
-        color: String
-    });
-    const Cat = mongoose.model('Cat', catSchema);
 
-    const data = await Cat.find({});
+    try {
+        const comeCat = new Cat({
+            name: 'Fluffy',
+            color: 'White'
+        });
+        await someCat.save();
+    } catch (error) {
+        console.log(error.message);
+    }
 
-    // const myCat = new Cat({
-    //     name: "Garry",
-    //     color: "Black"
-    // });
-    // await myCat.save();
+ 
 
-    console.log(data);
 
-    // const MyModel = mongoose.model('Cat', new Schema({
-    //     name: String,
-    //     color: String
-    // }));
 }
 
