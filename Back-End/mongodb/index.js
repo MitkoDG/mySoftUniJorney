@@ -1,21 +1,36 @@
-const { MongoClient } = require('mongodb');
+const mongoose = require('mongoose');
 
-const connectionStr = 'mongodb://localhost:27017'
-const client = new MongoClient(connectionStr, {
-    useUnifiedTopology: true
-});
+start();
 
+async function start() {
+    const uri = 'mongodb://localhost:27017/testdb';
 
-client.connect(async (err) => {
-    if (err != null) {
-        console.log(err + 'Something unexpected happened');
-        return;
-    }
+    mongoose.connect(uri, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    });
 
-    console.log('Connected successfully to server');
+    console.log('Connected to the database - Successful !');
 
-    const db = client.db('ddgtest');
-    const collection = db.collection('cats');
-    const data = await collection.find({}).toArray();
+    const catSchema = new mongoose.Schema({
+        name: String,
+        color: String
+    });
+    const Cat = mongoose.model('Cat', catSchema);
+
+    const data = await Cat.find({});
+
+    // const myCat = new Cat({
+    //     name: "Garry",
+    //     color: "Black"
+    // });
+    // await myCat.save();
+
     console.log(data);
-});
+
+    // const MyModel = mongoose.model('Cat', new Schema({
+    //     name: String,
+    //     color: String
+    // }));
+}
+
