@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const Cat = require('./models/Cat');
+const Comment = require('./models/Comment');
 const Person = require('./models/Person');
+const Post = require('./models/Post');
 
 start();
 
@@ -15,8 +17,11 @@ async function start() {
     console.log('Connected to the database - Successful !');
 
     // const data = await Person.find({ firstName: 'Peter' });
+
+    /*
     const data = await Person.find({ _id: '6415e6372c310cc411d1dddb' });
     console.log(data);
+    */
 
     // try {
     //     const comeCat = new Cat({
@@ -28,5 +33,31 @@ async function start() {
     //     console.log(error.message);
     // }
 
+    // post 
+    /*
+    const person = await Person.findOne({});
+
+    const post = new Post({
+        author: person,
+        title: 'NewPost',
+        content: 'This is post content',
+    });
+
+    await post.save();
+    */
+    //populate
+    /*
+    const post = await Person.findOne({}).populate('author');
+    const comment = new Comment({
+        author: post.author,
+        content: 'First Comment,
+        post
+    });
+    await comment.save();
+
+    post.comments.push(comment);
+    await post.save();
+    console.log(post);
+    */
 }
 
