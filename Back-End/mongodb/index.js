@@ -47,7 +47,10 @@ async function start() {
     */
     //populate
     /*
-    const post = await Person.findOne({}).populate('author');
+    const post = await Person.findOne({}).populate({
+        path: 'comments',
+        populate: 'author'
+    });
     const comment = new Comment({
         author: post.author,
         content: 'First Comment,
