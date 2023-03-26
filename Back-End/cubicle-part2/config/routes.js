@@ -5,6 +5,7 @@ const { create, post: createPost } = require('../controllers/create');
 const { edit, post: editPost } = require('../controllers/edit');
 const { notFound } = require('../controllers/notFound');
 
+
 module.exports = (app) => {
     app.get('/', catalog);
     app.get('/about', about);

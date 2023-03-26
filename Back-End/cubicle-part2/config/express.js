@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('express-handlebars');
 
+
 module.exports = (app) => {
     app.engine('hbs', hbs({
         extname: '.hbs'
@@ -9,4 +10,4 @@ module.exports = (app) => {
     app.use('/static', express.static('static'));
     app.use('/js', express.static('js'));
     app.use(express.urlencoded({ extended: false }));
-}
+};
