@@ -1,3 +1,4 @@
+const Cube = require('../models/Cube');
 const fs = require('fs/promises');
 const uniqid = require('uniqid');
 
@@ -36,7 +37,7 @@ async function init() {
         };
         next();
     };
-}
+};
 
 async function getAll(query) {
     let cubes = Object
@@ -55,7 +56,7 @@ async function getAll(query) {
     }
 
     return cubes;
-}
+};
 
 async function getById(id) {
     const cube = data[id];
@@ -67,11 +68,9 @@ async function getById(id) {
 }
 
 async function create(cube) {
-    const id = uniqid();
-    data[id] = cube;
-
-    await persist();
-}
+    const record = new Cube(cube);
+    return record.save();
+};
 
 async function edit(id, cube) {
     if (!data[id]) {
@@ -80,7 +79,7 @@ async function edit(id, cube) {
     data[id] = cube;
 
     await persist();
-}
+};
 
 async function persist() {
     try {
@@ -89,7 +88,7 @@ async function persist() {
     } catch (err) {
         console.error('Error writing out database');
     }
-}
+};
 
 module.exports = {
     init,
