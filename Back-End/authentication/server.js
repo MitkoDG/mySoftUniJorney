@@ -2,6 +2,11 @@ const express = require('express');
 const bodyParser = require('express').urlencoded;
 const expressSession = require('express-session');
 // const cookieParser = require('cookie-parser');
+const bcrypt = require('bcrypt');
+
+const routes = require('./controllers');
+
+const users = {};
 
 const app = express();
 app.use(bodyParser({ extended: false }));
@@ -38,7 +43,27 @@ function mySessionStorage(req, res, next) {
 app.use(cookieParser());
 app.use(mySessionStorage);
 */
-const users = {};
+
+
+
+// const saltRounds = 10;
+// const myPlaintextPassword = 'password1';
+// const someOtherPlaintextPassword = 'password2 ';
+
+// bcrypt.genSalt(saltRounds, function (err, salt) {
+//   bcrypt.hash(myPlaintextPassword, salt, function (err, hash) {
+//     // Store hash in your password DB.
+//   });
+// });
+
+// Load hash from your password DB.
+// bcrypt.compare(myPlaintextPassword, hash, function (err, result) {
+// result == true
+// });
+// bcrypt.compare(someOtherPlaintextPassword, hash, function (err, result) {
+// result == false
+// });
+
 
 app.use(expressSession({
   secret: 'my random secret',
@@ -47,59 +72,35 @@ app.use(expressSession({
   cookie: { secure: false }
 }));
 
-app.get('/', (req, res) => {
-  // console.log(req.cookies);
-  // res.cookie('cookieParser_Cookie', 1);
-  // res.cookie('My_Cookie', 'DDG');
-  res.send('<h1>Hello</h1><a href="/">Home</a> <a href="/register">Register</a> <a href="/login">Login</a>')
-  // session.visited++;
-  // res.send(`<h1>Hello</h1><p>Your session has data ${JSON.stringify(session)}</p>`)
+routes(app);
 
-});
+app.post('/register', async (req, res) => {
+  const id = ('00000000' + (Math.random() * 99999999 | 0).toString(16)).slice(-8);
 
-app.get('/register', (req, res) => {
-  res.send(`
-  <h1>Register</h1><a href="/">Home</a> <a href="/register">Register</a> <a href="/login">Login</a>
-  <form action="/register" method="POST">
-        <label>Username: <input type="text" name="username"></label>
-        <label>Password: <input type="password" name="password"></label>
-        <label>Repeat: <input type="password" name="repass"></label>
-        <input type="submit" value="Register">
-    </form>
-    `);
-});
-
-app.all('*', (req, res, next) => {
-  console.log('>>>', req.method, req.url, req.body);
-  console.log('>>> Session data', req.session);
-  next();
-})
-
-app.get('/login', (req, res) => {
-  res.send(`
-  <h1>Login</h1><a href="/">Home</a> <a href="/register">Register</a> <a href="/login">Login</a>
-  <form action="/login" method="POST">
-        <label>Username: <input type="text" name="username"></label>
-        <label>Password: <input type="password" name="password"></label>
-        <input type="submit" value="Login">
-    </form>
-    `);
-});
-
-app.post('/register', (req, res) => {
-  const username = req.body.username;
-  users[username] = {
-    id: ('00000000' + (Math.random() * 99999999 | 0).toString(16)).slice(-8),
-    password: req.body.password,
+  const hashedPassword = await bcrypt.hash(req.body.password, 8)
+  users[id] = {
+    username: req.body.username,
+    hashedPassword
   };
 
-  res.redirect('/');
+  console.log('New user', users);
+
+  res.redirect('/login');
 });
 
-app.post('/login', (req, res) => {
-  const user = users[req.body.username];
-  if (user && user.passoword == req.body.passoword) {
-    req.session.user = user;
+app.post('/login', async (req, res) => {
+  const username = req.body.username;
+
+  const user = Object.entries(users).find(([id, u]) => u.username == username);
+
+  console.log('Checking password', req.body.password);
+
+  const passwordMatch = await bcrypt.compare(req.body.password, user[1].hashedPassword);
+  if (user && passwordMatch) {
+    req.session.user = {
+      _id: user[1].id,
+      username
+    };
     res.redirect('/');
   } else {
     res.send('Wrong passwrd');
