@@ -20,19 +20,18 @@ module.exports = (req, res, next) => {
 
             console.log('Checking password', password);
 
-            const passwordMatch = await bcrypt.compare(req.body.password, user[1].hashedPassword);
-            if (user && passwordMatch) {
+            // const passwordsMatch = await bcrypt.compare(req.body.password, user[1].hashedPassword);
+            if (user && await bcrypt.compare(req.body.password, user[1].hashedPassword)) {
                 req.session.user = {
                     _id: user[1].id,
                     username
                 };
-                res.redirect('/');
+                return true;
             } else {
-                res.send('Wrong passwrd');
+                return false;
             }
         }
-        console.log('New user', users);
-    }
+    };
 
     next();
 }

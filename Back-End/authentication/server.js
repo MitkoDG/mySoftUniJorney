@@ -5,7 +5,7 @@ const expressSession = require('express-session');
 const bcrypt = require('bcrypt');
 
 const routes = require('./controllers');
-
+const auth = require('./auth');
 
 const app = express();
 app.use(bodyParser({ extended: false }));
@@ -70,18 +70,25 @@ app.use(expressSession({
   saveUninitialized: true,
   cookie: { secure: false }
 }));
+app.use(auth);
 
 routes(app);
 
 app.post('/register', async (req, res) => {
-  
-
+  await req.register(req.body.username, req.body.password);
   res.redirect('/login');
 });
 
 app.post('/login', async (req, res) => {
-  
+  const username = req.body.username;
+  const password = req.body.password;
 
+  const passwordsMatch = await req.login(username, password);
+  if (passwordsMatch) {
+    res.redirect('/');
+  } else {
+    res.send(403, 'Wrong password');
+  }
 });
 
 app.listen(3000, () => { console.log('Server listening on port 3000'); });
