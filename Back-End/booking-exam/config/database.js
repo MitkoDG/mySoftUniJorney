@@ -5,8 +5,8 @@ module.exports = (app) => {
         mongoose.connect(DB_CONNECTON_STRING);
     } catch (error) {
         const db = mongoose.connection;
-        db.on('error', err => {
-            logError('connection error', err);
+        db.on('error', error => {
+            logError('connection error', error);
         });
     }
 

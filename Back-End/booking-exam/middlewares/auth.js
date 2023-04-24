@@ -68,3 +68,5 @@ function generateToken(userData) {
     }, TOKEN_SECRET);
     
 }
+
+// function for functionality testing
