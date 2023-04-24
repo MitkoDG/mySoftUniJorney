@@ -7,7 +7,20 @@ const userService = require('../services/user');
 function init() {
     return function (req, res, next) {
         // TODO parse jwt
-
+        // attach functions to context
+        req.auth = {
+            async register(username, password) {
+                const token = await register(username, password);
+                res.cookie(COOKIE_NANE, token);
+            },
+            async login() {
+                const token = await login(username, password);
+                res.cookie(COOKIE_NANE, token);
+            },
+            logout() {
+                res.clearCookie(COOKIE_NANE);
+            }
+        }
 
 
         next();
@@ -46,6 +59,7 @@ async function login(username, password) {
     return generateToken(user);
 
 }
+
 
 function generateToken(userData) {
     return token = jwt.sign({
