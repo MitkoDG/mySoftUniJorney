@@ -4,27 +4,25 @@ const jwt = require('jsonwebtoken');
 const { TOKEN_SECRET, COOKIE_NANE } = require('../config')
 const userService = require('../services/user');
 
-function init() {
-    return function (req, res, next) {
-        // TODO parse jwt
-        // attach functions to context
-        req.auth = {
-            async register(username, password) {
-                const token = await register(username, password);
-                res.cookie(COOKIE_NANE, token);
-            },
-            async login() {
-                const token = await login(username, password);
-                res.cookie(COOKIE_NANE, token);
-            },
-            logout() {
-                res.clearCookie(COOKIE_NANE);
-            }
+module.exports = () => (req, res, next) => {
+    // TODO parse jwt
+    // attach functions to context
+    req.auth = {
+        async register(username, password) {
+            const token = await register(username, password);
+            res.cookie(COOKIE_NANE, token);
+        },
+        async login() {
+            const token = await login(username, password);
+            res.cookie(COOKIE_NANE, token);
+        },
+        logout() {
+            res.clearCookie(COOKIE_NANE);
         }
+    }
 
 
-        next();
-    };
+    next();
 };
 
 async function register(username, password) {
@@ -37,7 +35,7 @@ async function register(username, password) {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    const user = await userService.createUser(username, hashedPassword); // hashed or password
+    const user = await userService.createUser(username, hashedPassword);
 
     // TODO log in user
     return generateToken(user);
@@ -66,7 +64,7 @@ function generateToken(userData) {
         _id: user._id,
         username: userData.username
     }, TOKEN_SECRET);
-    
+
 }
 
 // function for functionality testing

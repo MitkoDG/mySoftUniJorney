@@ -3,7 +3,8 @@ const express = require('express');
 const { PORT } = require('./config/index');
 const databaseConfig = require('./config/database');
 const expressConfig = require('./config/express');
-const userService = require('./services/user')
+const userService = require('./services/user');
+const authMiddleware = require('./middlewares/auth');
 
 const app = express();
 
@@ -22,9 +23,20 @@ async function start(app) {
 }
 
 async function testAuth() {
+    const reqMock = {};
+    const resMock = {
+        cookie() {
+            console.log('Set cookie', argiments);
+        }
+    };
+
+    const nextMock = () => { };
+
     try {
-        const user = await userService.createUser('DDG', '565656');
-        console.log(user);
+        const auth = authMiddleware();
+        auth(reqMock, resMock, nextMock);
+
+        await reqMock.auth.register('Peter', '123654');
         // const result = await userService.getUserByUsername('ddg');
         // console.log(result);
 
