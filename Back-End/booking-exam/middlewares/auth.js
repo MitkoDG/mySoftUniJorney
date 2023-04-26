@@ -60,7 +60,7 @@ async function login(username, password) {
 
 
 function generateToken(userData) {
-    return token = jwt.sign({
+    return jwt.sign({
         _id: user._id,
         username: userData.username
     }, TOKEN_SECRET);

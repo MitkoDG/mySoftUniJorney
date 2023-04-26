@@ -3,7 +3,7 @@ const express = require('express');
 const { PORT } = require('./config/index');
 const databaseConfig = require('./config/database');
 const expressConfig = require('./config/express');
-const userService = require('./services/user');
+// const userService = require('./services/user');
 const authMiddleware = require('./middlewares/auth');
 
 const app = express();
@@ -36,7 +36,8 @@ async function testAuth() {
         const auth = authMiddleware();
         auth(reqMock, resMock, nextMock);
 
-        await reqMock.auth.register('Peter', '123654');
+        await reqMock.auth.login('Sasho', '1q2w3e');
+        // await userService.createUser('ddg', '123654');
         // const result = await userService.getUserByUsername('ddg');
         // console.log(result);
 
