@@ -4,20 +4,21 @@ const { PORT } = require('./config/index');
 const databaseConfig = require('./config/database');
 const expressConfig = require('./config/express');
 // const userService = require('./services/user');
-const authMiddleware = require('./middlewares/auth');
+// const authMiddleware = require('./middlewares/auth');
 
-const app = express();
 
-start(app);
+start();
 
-async function start(app) {
+async function start() {
+    const app = express();
+    
     await databaseConfig(app);
     expressConfig(app);
 
     app.get('/', (req, res) => res.send('It works'));
 
     app.listen(PORT, () => {
-        testAuth();
+        // testAuth();
         console.log(`Application started at http://127.0.0.1:${PORT}`)
     });
 }
