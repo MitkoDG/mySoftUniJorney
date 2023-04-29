@@ -14,11 +14,27 @@ router.post(
         }
         return true;
     }),
-    (req, res) => {
-        console.log(req.body);
-        const errors = validationResult(req);
+    async (req, res) => {
+        const { errors } = validationResult(req);
         console.log(errors);
-        res.redirect('/auth/register');
+        try {
+            if (errors.length > 0) {
+                throw new Error('Validation error');
+            }
+
+            await req.auth.register(req.body.username, req.body.password);
+            res.redirect('/'); // /auth/register
+
+        } catch (error) {
+            console.log(error)
+            const ctx = {
+                errors,
+                userData: {
+                    username: req.body.username
+                }
+            };
+            res.render('register', ctx);
+        }
     }
 );
 
@@ -26,9 +42,19 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.post('/login', (req, res) => {
-    console.log(req.body);
-    res.redirect('/auth/login');
+router.post('/login', async (req, res) => {
+    try {
+        await req.auth.login(req.body.username, req.body.password)
+    } catch (error) {
+        console.log(error.message);
+        const ctx = {
+            errors: [error.message],
+            userData: {
+                username: req.body.username
+            }
+        };
+        res.render('/login', ctx);
+    }
 });
 
 module.exports = router;
