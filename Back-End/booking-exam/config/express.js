@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const authMiddleware = require('../middlewares/auth');
 
 module.exports = (app) => {
-    
+
     app.engine('hbs', hbs.engine({
         extname: '.hbs',
         // defaultLayout: 'layout',
@@ -18,4 +18,14 @@ module.exports = (app) => {
     app.use(express.urlencoded({ extended: true }));
     app.use(cookieParser());
     app.use(authMiddleware());
+
+    app.use((req, res, next) => {
+        if (req.url.includes('/favicon.ico')) {
+            console.log(req.method + ' ' + req.url);
+            if (req.user) {
+                console.log('Know user', req.user.username);
+            }
+        }
+        next();
+    });
 }
