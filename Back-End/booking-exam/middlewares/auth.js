@@ -13,7 +13,7 @@ module.exports = () => (req, res, next) => {
                 const token = await register(username, password);
                 res.cookie(COOKIE_NANE, token);
             },
-            async login() {
+            async login(username, password) {
                 const token = await login(username, password);
                 res.cookie(COOKIE_NANE, token);
             },
@@ -69,15 +69,20 @@ function generateToken(userData) {
 
 function parseToken(req, res) {
     const token = req.cookies[COOKIE_NANE];
-    try {
-        const userData = jwt.verify(token, TOKEN_SECRET);
-        req.user = userData;
 
-        return true;
-    } catch (err) {
-        res.clearCookie(COOKIE_NANE);
-        res.redirect('/auth/login');
+    if (token) {
+        try {
+            const userData = jwt.verify(token, TOKEN_SECRET);
+            req.user = userData;
 
-        return false;
+            return true;
+        } catch (err) {
+            res.clearCookie(COOKIE_NANE);
+            res.redirect('/auth/login');
+
+            return false;
+        }
     }
+    return true;
+
 }
