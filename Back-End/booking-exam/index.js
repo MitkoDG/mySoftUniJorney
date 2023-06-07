@@ -17,7 +17,7 @@ async function start() {
     expressConfig(app);
     routesConfig(app);
 
-    app.get('/', (req, res) => res.send('It works'));
+    // app.get('/', (req, res) => res.send('It works'));
 
     app.listen(PORT, () => {
         // testAuth();
